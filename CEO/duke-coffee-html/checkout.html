@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชำระเงินและระบุที่อยู่ | Duke Coffee</title>
+    <meta name="description" content="สัมผัสรสชาติกาแฟคุณภาพ พร้อมช่วงเวลาพิเศษในแบบของคุณ">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C8A96B'><path d='M2 21h18v-2H2v2zm2-4h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1zm16-9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2V8z'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Duke Coffee Design System CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Brand Logo -->
+                <a href="./index.html" class="brand-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <span>DUKE <span>COFFEE</span></span>
+                </a>
+
+                <!-- Desktop / Drawer Nav Menu -->
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li>
+                            <a href="./index.html" class="nav-link ">หน้าแรก</a>
+                        </li>
+                        <li>
+                            <a href="./menu.html" class="nav-link ">เมนูกาแฟ</a>
+                        </li>
+                        <li>
+                            <a href="./order-tracking.html" class="nav-link ">ติดตามออเดอร์</a>
+                        </li>
+                        <li>
+                            <a href="./about.html" class="nav-link ">เกี่ยวกับเรา</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html" class="nav-link ">ติดต่อเรา</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Actions (Cart, Account, Hamburger) -->
+                <div class="nav-actions">
+                    <!-- Cart Button -->
+                    <a href="./cart.html" class="cart-btn" title="ตะกร้าสินค้า" id="headerCartBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-badge" id="headerCartBadge">2</span>
+                    </a>
+
+                    <!-- Customer Profile / Login -->
+                                            <a href="./login.html" class="btn btn-primary btn-sm">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>เข้าสู่ระบบ</span>
+                        </a>
+                    
+                    <!-- Mobile Hamburger -->
+                    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content">
+        <!-- Flash Message Notification -->
+        
+<div class="section" style="padding-top: 35px;">
+    <div class="container">
+        <!-- Section Header -->
+        <div style="margin-bottom: 35px;">
+            <span class="section-tag">Checkout Process</span>
+            <h1 style="font-size: 32px; margin-bottom: 6px;">ชำระเงินและยืนยันคำสั่งซื้อ</h1>
+            <p style="color: var(--text-muted); font-size: 14px;">กรอกข้อมูลติดต่อ เลือกวิธีรับเครื่องดื่ม และช่องทางการชำระเงิน</p>
+        </div>
+
+        <form action="./checkout.html" method="POST" id="checkoutForm">
+            <input type="hidden" name="csrf_token" value="6a178d587eeba23864c9838a8bf9eae68a4b8152fc17af88a6f0ef4ee247a110">
+            <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 35px; align-items: flex-start;">
+                <!-- Left: Form Steps -->
+                <div style="display: flex; flex-direction: column; gap: 28px;">
+                    <!-- Step 1: Delivery Method -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 30px;">
+                        <h3 style="font-size: 18px; margin-bottom: 18px; display: flex; align-items: center; gap: 10px;">
+                            <span style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent-gold); color: #111; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;">1</span>
+                            วิธีรับสินค้า (Delivery Method)
+                        </h3>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <label class="delivery-option active" id="optPickup" style="cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 18px; background: #161412; border: 1px solid var(--accent-gold); border-radius: var(--radius-md); transition: var(--transition);">
+                                <input type="radio" name="delivery_method" value="pickup" checked onchange="toggleDelivery('pickup')" style="accent-color: var(--accent-gold); width: 18px; height: 18px;">
+                                <div>
+                                    <div style="font-weight: 700; color: #fff; font-size: 15px;"><i class="fas fa-store" style="color: var(--accent-gold); margin-right: 6px;"></i> รับที่หน้าร้าน</div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">ฟรีค่าจัดส่ง (พร้อมรับใน 10-15 นาที)</div>
+                                </div>
+                            </label>
+
+                            <label class="delivery-option" id="optDelivery" style="cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 18px; background: #161412; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); transition: var(--transition);">
+                                <input type="radio" name="delivery_method" value="delivery" onchange="toggleDelivery('delivery')" style="accent-color: var(--accent-gold); width: 18px; height: 18px;">
+                                <div>
+                                    <div style="font-weight: 700; color: #fff; font-size: 15px;"><i class="fas fa-motorcycle" style="color: var(--accent-gold); margin-right: 6px;"></i> จัดส่งเดลิเวอรี</div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">ค่าส่ง ฿30.00 (จัดส่งรวดเร็ว)</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Customer & Delivery Info -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 30px;">
+                        <h3 style="font-size: 18px; margin-bottom: 18px; display: flex; align-items: center; gap: 10px;">
+                            <span style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent-gold); color: #111; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;">2</span>
+                            ข้อมูลผู้สั่งซื้อ & ที่อยู่
+                        </h3>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">ชื่อ-นามสกุล <span style="color: #dc3545;">*</span></label>
+                                <input type="text" name="customer_name" required value="" placeholder="เช่น สมชาย ใจดี" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">เบอร์โทรศัพท์ติดต่อ <span style="color: #dc3545;">*</span></label>
+                                <input type="tel" name="phone" required value="" placeholder="เช่น 0891234567" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">อีเมล (สำหรับรับใบเสร็จและแจ้งเตือน)</label>
+                            <input type="email" name="email" value="" placeholder="name@example.com" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                        </div>
+
+                        <!-- Address input (Show only when delivery is active) -->
+                        <div id="addressSection" style="display: none; margin-bottom: 16px;">
+                            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">ที่อยู่จัดส่งโดยละเอียด <span style="color: #dc3545;">*</span></label>
+                            <textarea name="address" rows="3" placeholder="บ้านเลขที่ อาคาร ซอย ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด รหัสไปรษณีย์" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 14px; outline: none; line-height: 1.5;"></textarea>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">หมายเหตุถึงบาริสต้า (เพิ่มเติม)</label>
+                            <input type="text" name="note" placeholder="เช่น ขอแยกน้ำแข็ง, รับช้อนส้อม, หรือฝากไว้กับ รปภ." style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 14px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Payment Method -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 30px;">
+                        <h3 style="font-size: 18px; margin-bottom: 18px; display: flex; align-items: center; gap: 10px;">
+                            <span style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent-gold); color: #111; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;">3</span>
+                            ช่องทางการชำระเงิน (Payment Option)
+                        </h3>
+
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <!-- PromptPay -->
+                            <label style="display: flex; align-items: center; gap: 14px; padding: 16px; background: #161412; border: 1px solid var(--accent-gold); border-radius: var(--radius-md); cursor: pointer;">
+                                <input type="radio" name="payment_method" value="promptpay" checked style="accent-color: var(--accent-gold); width: 18px; height: 18px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 700; color: #fff; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                                        <i class="fas fa-qrcode" style="color: var(--accent-gold); font-size: 18px;"></i> พร้อมเพย์ QR Code (PromptPay QR)
+                                        <span style="font-size: 11px; background: rgba(200,169,107,0.2); color: var(--accent-gold); padding: 2px 8px; border-radius: 4px; font-weight: 600;">แนะนำ / ตรวจสอบเร็ว</span>
+                                    </div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 3px;">สแกนผ่าน Mobile Banking ได้ทุกธนาคาร พร้อมแนบสลิป</div>
+                                </div>
+                            </label>
+
+                            <!-- Bank Transfer -->
+                            <label style="display: flex; align-items: center; gap: 14px; padding: 16px; background: #161412; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); cursor: pointer;">
+                                <input type="radio" name="payment_method" value="bank_transfer" style="accent-color: var(--accent-gold); width: 18px; height: 18px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 700; color: #fff; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                                        <i class="fas fa-university" style="color: var(--accent-gold); font-size: 18px;"></i> โอนเงินเข้าบัญชีธนาคาร (Bank Transfer)
+                                    </div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 3px;">ธนาคารกสิกรไทย บจก. ดุ๊ก คอฟฟี่ เลขที่ 123-4-56789-0</div>
+                                </div>
+                            </label>
+
+                            <!-- Cash -->
+                            <label id="cashOptionWrapper" style="display: flex; align-items: center; gap: 14px; padding: 16px; background: #161412; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); cursor: pointer;">
+                                <input type="radio" name="payment_method" value="cash" style="accent-color: var(--accent-gold); width: 18px; height: 18px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 700; color: #fff; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+                                        <i class="fas fa-money-bill-wave" style="color: var(--accent-gold); font-size: 18px;"></i> ชำระเงินสดหน้าร้าน (Cash on Pickup)
+                                    </div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 3px;">ชำระเงินที่เคาน์เตอร์บาริสต้าเมื่อมารับสินค้า</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Sticky Order Review -->
+                <div style="position: sticky; top: 110px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 26px;">
+                    <h4 style="font-size: 18px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">สรุปรายการสั่งซื้อ</h4>
+
+                    <!-- Mini Cart List -->
+                    <div style="display: flex; flex-direction: column; gap: 12px; max-height: 280px; overflow-y: auto; padding-right: 6px; margin-bottom: 20px;">
+                                                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle);">
+                                <div>
+                                    <div style="font-weight: 600; color: var(--text-light);">Americano × 2</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">
+                                        ,                                     </div>
+                                </div>
+                                <span style="font-weight: 700; color: var(--text-light);">
+฿0.00</span>
+                            </div>
+                                            </div>
+
+                    <!-- Price breakdown -->
+                    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
+                            <span>ยอดรวมสินค้า</span>
+                            <span style="color: var(--text-light); font-weight: 600;">฿0.00</span>
+                        </div>
+                                                <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
+                            <span>ค่าจัดส่ง</span>
+                            <span id="displayDeliveryFee" style="color: var(--text-light); font-weight: 600;">฿0.00</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-top: 1px solid var(--border-color); margin-bottom: 24px;">
+                        <span style="font-size: 16px; font-weight: 700;">ยอดชำระทั้งสิ้น</span>
+                        <span id="displayTotalAmount" style="font-size: 26px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-heading);">฿0.00</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                        <i class="fas fa-check-circle"></i> ยืนยันการสั่งซื้อ
+                    </button>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="./cart.html" style="font-size: 13px; color: var(--text-muted);"><i class="fas fa-arrow-left"></i> ย้อนกลับไปแก้ไขตะกร้า</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+const baseTotal = 0;
+const deliveryFeeAmount = 30;
+
+function toggleDelivery(method) {
+    const optPickup = document.getElementById('optPickup');
+    const optDelivery = document.getElementById('optDelivery');
+    const addressSection = document.getElementById('addressSection');
+    const cashOption = document.getElementById('cashOptionWrapper');
+    const displayDeliveryFee = document.getElementById('displayDeliveryFee');
+    const displayTotalAmount = document.getElementById('displayTotalAmount');
+
+    if (method === 'delivery') {
+        optDelivery.style.borderColor = 'var(--accent-gold)';
+        optPickup.style.borderColor = 'var(--border-subtle)';
+        addressSection.style.display = 'block';
+        if (cashOption) cashOption.style.display = 'none';
+
+        const newTotal = baseTotal + deliveryFeeAmount;
+        displayDeliveryFee.textContent = '฿' + deliveryFeeAmount.toFixed(2);
+        displayTotalAmount.textContent = '฿' + newTotal.toFixed(2);
+    } else {
+        optPickup.style.borderColor = 'var(--accent-gold)';
+        optDelivery.style.borderColor = 'var(--border-subtle)';
+        addressSection.style.display = 'none';
+        if (cashOption) cashOption.style.display = 'flex';
+
+        displayDeliveryFee.textContent = '฿0.00';
+        displayTotalAmount.textContent = '฿' + baseTotal.toFixed(2);
+    }
+}
+</script>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand -->
+                <div class="footer-col">
+                    <div class="brand-logo" style="margin-bottom: 16px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <span>DUKE <span>COFFEE</span></span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px;">
+                        สัมผัสสุนทรียภาพแห่งกาแฟพิเศษ คัดสรรเมล็ดกาแฟสายพันธุ์ดีจากแหล่งปลูกชั้นนำ คั่วและปรุงด้วยความพิถีพิถัน เพื่อให้ทุกจิบคือความประทับใจ
+                    </p>
+                    <div style="display: flex; gap: 12px;">
+                        <a href="https://facebook.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://line.me" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="LINE Official"><i class="fab fa-line"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">เมนูแนะนำ</h4>
+                    <ul class="footer-links">
+                        <li><a href="./menu-cat-1.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Special Coffee</a></li>
+                        <li><a href="./menu-cat-2.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Non-Coffee</a></li>
+                        <li><a href="./menu-cat-3.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Signature Tea</a></li>
+                        <li><a href="./menu-cat-4.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Fresh Bakery</a></li>
+                        <li><a href="./menu-cat-5.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Artisan Desserts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Customer Care -->
+                <div class="footer-col">
+                    <h4 class="footer-title">บริการลูกค้า</h4>
+                    <ul class="footer-links">
+                        <li><a href="./order-tracking.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ติดตามสถานะคำสั่งซื้อ</a></li>
+                        <li><a href="./cart.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ตะกร้าสินค้าของฉัน</a></li>
+                        <li><a href="./about.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ประวัติและเรื่องราวร้าน</a></li>
+                        <li><a href="./contact.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> แผนที่ & ติดต่อเรา</a></li>
+                        <li><a href="./admin/login.html" style="color: rgba(200, 169, 107, 0.4);"><i class="fas fa-lock" style="font-size: 10px; margin-right: 6px;"></i> พนักงาน / เจ้าหน้าที่</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Shop Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">ข้อมูลร้าน & เวลาเปิด</h4>
+                    <div style="font-size: 14px; color: var(--text-muted); display: flex; flex-direction: column; gap: 12px;">
+                        <p style="display: flex; gap: 10px; align-items: flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-top: 4px;"></i>
+                            <span>128/9 ถ.สุขุมวิท 55 (ทองหล่อ) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110</span>
+                        </p>
+                        <p style="display: flex; gap: 10px; align-items: center;">
+                            <i class="fas fa-phone-alt" style="color: var(--accent-gold);"></i>
+                            <span>02-888-9999, 089-123-4567</span>
+                        </p>
+                        <p style="display: flex; gap: 10px; align-items: flex-start;">
+                            <i class="fas fa-clock" style="color: var(--accent-gold); margin-top: 4px;"></i>
+                            <span>จันทร์ - ศุกร์: 07:00 - 18:00 น.<br>เสาร์ - อาทิตย์: 08:00 - 19:00 น.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 DUKE COFFEE (THAILAND) CO., LTD. สงวนลิขสิทธิ์ทุกประการ</p>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--accent-gold);">
+                        <i class="fas fa-shield-alt"></i> ปลอดภัยด้วย SSL & PromptPay Verified
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

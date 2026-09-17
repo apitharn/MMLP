@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบสำหรับลูกค้า | Duke Coffee</title>
+    <meta name="description" content="สัมผัสรสชาติกาแฟคุณภาพ พร้อมช่วงเวลาพิเศษในแบบของคุณ">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C8A96B'><path d='M2 21h18v-2H2v2zm2-4h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1zm16-9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2V8z'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Duke Coffee Design System CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Brand Logo -->
+                <a href="./index.html" class="brand-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <span>DUKE <span>COFFEE</span></span>
+                </a>
+
+                <!-- Desktop / Drawer Nav Menu -->
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li>
+                            <a href="./index.html" class="nav-link ">หน้าแรก</a>
+                        </li>
+                        <li>
+                            <a href="./menu.html" class="nav-link ">เมนูกาแฟ</a>
+                        </li>
+                        <li>
+                            <a href="./order-tracking.html" class="nav-link ">ติดตามออเดอร์</a>
+                        </li>
+                        <li>
+                            <a href="./about.html" class="nav-link ">เกี่ยวกับเรา</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html" class="nav-link ">ติดต่อเรา</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Actions (Cart, Account, Hamburger) -->
+                <div class="nav-actions">
+                    <!-- Cart Button -->
+                    <a href="./cart.html" class="cart-btn" title="ตะกร้าสินค้า" id="headerCartBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-badge" id="headerCartBadge">0</span>
+                    </a>
+
+                    <!-- Customer Profile / Login -->
+                                            <a href="./login.html" class="btn btn-primary btn-sm">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>เข้าสู่ระบบ</span>
+                        </a>
+                    
+                    <!-- Mobile Hamburger -->
+                    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content">
+        <!-- Flash Message Notification -->
+        
+<div class="section" style="padding-top: 50px;">
+    <div class="container" style="max-width: 480px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 40px 35px; box-shadow: var(--shadow-lg);">
+            <!-- Card Header -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div class="logo-icon" style="margin: 0 auto 16px; width: 50px; height: 50px; font-size: 24px;">
+                    <i class="fas fa-user-lock"></i>
+                </div>
+                <h1 style="font-size: 28px; margin-bottom: 6px;">เข้าสู่ระบบสมาชิก</h1>
+                <p style="color: var(--text-muted); font-size: 14px;">เข้าสู่ระบบเพื่อสั่งซื้อสะสมแต้ม และตรวจสอบประวัติ</p>
+            </div>
+
+            <!-- Login Form -->
+            <form action="./login.html" method="POST">
+                <input type="hidden" name="csrf_token" value="f65e3e6969d14902c67eee4d161bdbdb28c1fa51e3c1aeb4adc26953a4293a10">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">
+                        อีเมล หรือ เบอร์โทรศัพท์
+                    </label>
+                    <div style="position: relative;">
+                        <i class="fas fa-envelope" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                        <input type="text" name="identifier" required placeholder="customer@dukecoffee.com หรือ 0891234567" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 16px 12px 44px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">
+                        รหัสผ่าน (Password)
+                    </label>
+                    <div style="position: relative;">
+                        <i class="fas fa-lock" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                        <input type="password" name="password" required placeholder="••••••••" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 16px 12px 44px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 20px;">
+                    <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
+                </button>
+            </form>
+
+            <!-- Footer Links -->
+            <div style="text-align: center; font-size: 14px; color: var(--text-muted); padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                ยังไม่มีบัญชีสมาชิก? <a href="./register.html" style="font-weight: 600;">สมัครสมาชิกใหม่</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand -->
+                <div class="footer-col">
+                    <div class="brand-logo" style="margin-bottom: 16px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <span>DUKE <span>COFFEE</span></span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px;">
+                        สัมผัสสุนทรียภาพแห่งกาแฟพิเศษ คัดสรรเมล็ดกาแฟสายพันธุ์ดีจากแหล่งปลูกชั้นนำ คั่วและปรุงด้วยความพิถีพิถัน เพื่อให้ทุกจิบคือความประทับใจ
+                    </p>
+                    <div style="display: flex; gap: 12px;">
+                        <a href="https://facebook.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://line.me" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="LINE Official"><i class="fab fa-line"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">เมนูแนะนำ</h4>
+                    <ul class="footer-links">
+                        <li><a href="./menu-cat-1.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Special Coffee</a></li>
+                        <li><a href="./menu-cat-2.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Non-Coffee</a></li>
+                        <li><a href="./menu-cat-3.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Signature Tea</a></li>
+                        <li><a href="./menu-cat-4.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Fresh Bakery</a></li>
+                        <li><a href="./menu-cat-5.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Artisan Desserts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Customer Care -->
+                <div class="footer-col">
+                    <h4 class="footer-title">บริการลูกค้า</h4>
+                    <ul class="footer-links">
+                        <li><a href="./order-tracking.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ติดตามสถานะคำสั่งซื้อ</a></li>
+                        <li><a href="./cart.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ตะกร้าสินค้าของฉัน</a></li>
+                        <li><a href="./about.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ประวัติและเรื่องราวร้าน</a></li>
+                        <li><a href="./contact.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> แผนที่ & ติดต่อเรา</a></li>
+                        <li><a href="./admin/login.html" style="color: rgba(200, 169, 107, 0.4);"><i class="fas fa-lock" style="font-size: 10px; margin-right: 6px;"></i> พนักงาน / เจ้าหน้าที่</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Shop Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">ข้อมูลร้าน & เวลาเปิด</h4>
+                    <div style="font-size: 14px; color: var(--text-muted); display: flex; flex-direction: column; gap: 12px;">
+                        <p style="display: flex; gap: 10px; align-items: flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-top: 4px;"></i>
+                            <span>128/9 ถ.สุขุมวิท 55 (ทองหล่อ) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110</span>
+                        </p>
+                        <p style="display: flex; gap: 10px; align-items: center;">
+                            <i class="fas fa-phone-alt" style="color: var(--accent-gold);"></i>
+                            <span>02-888-9999, 089-123-4567</span>
+                        </p>
+                        <p style="display: flex; gap: 10px; align-items: flex-start;">
+                            <i class="fas fa-clock" style="color: var(--accent-gold); margin-top: 4px;"></i>
+                            <span>จันทร์ - ศุกร์: 07:00 - 18:00 น.<br>เสาร์ - อาทิตย์: 08:00 - 19:00 น.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 DUKE COFFEE (THAILAND) CO., LTD. สงวนลิขสิทธิ์ทุกประการ</p>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--accent-gold);">
+                        <i class="fas fa-shield-alt"></i> ปลอดภัยด้วย SSL & PromptPay Verified
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

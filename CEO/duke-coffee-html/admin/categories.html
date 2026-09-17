@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จัดการหมวดหมู่สินค้า | Admin - Duke Coffee</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Master CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body style="background: var(--bg-dark); color: var(--text-light);">
+
+    <div class="admin-layout" style="display: flex; min-height: 100vh;">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" style="width: 260px; background: #141210; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; flex-shrink: 0;">
+            <!-- Brand -->
+            <div style="padding: 24px 20px; border-bottom: 1px solid var(--border-subtle);">
+                <a href="../admin/index.html" class="brand-logo" style="font-size: 20px;">
+                    <div class="logo-icon" style="width: 36px; height: 36px; font-size: 16px;">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <span>DUKE <span>ADMIN</span></span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav style="padding: 20px 12px; flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                <a href="../admin/index.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-tachometer-alt" style="width: 20px;"></i>
+                    <span>แดชบอร์ด (Dashboard)</span>
+                </a>
+
+                <a href="../admin/orders.html" class="admin-nav-link " style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-receipt" style="width: 20px;"></i>
+                        <span>คำสั่งซื้อ (Orders)</span>
+                    </div>
+                                            <span style="background: #dc3545; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: var(--radius-full);">
+                            1                        </span>
+                                    </a>
+
+                <a href="../admin/products.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-mug-hot" style="width: 20px;"></i>
+                    <span>จัดการสินค้า (Products)</span>
+                </a>
+
+                <a href="../admin/categories.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-th-list" style="width: 20px;"></i>
+                    <span>หมวดหมู่ (Categories)</span>
+                </a>
+
+                <a href="../admin/promotions.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-ticket-alt" style="width: 20px;"></i>
+                    <span>โค้ดส่วนลด (Coupons)</span>
+                </a>
+
+                <a href="../admin/settings.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-cog" style="width: 20px;"></i>
+                    <span>ตั้งค่าร้าน (Settings)</span>
+                </a>
+            </nav>
+
+            <!-- Bottom User & Frontend Link -->
+            <div style="padding: 20px; border-top: 1px solid var(--border-subtle);">
+                <a href="../index.html" target="_blank" class="btn btn-dark btn-sm" style="width: 100%; margin-bottom: 12px;">
+                    <i class="fas fa-external-link-alt"></i> เปิดหน้าร้านค้า
+                </a>
+                <a href="../admin/login.html" class="btn btn-outline btn-sm" style="width: 100%;">
+                    <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Panel -->
+        <div class="admin-main" style="flex: 1; display: flex; flex-direction: column; overflow-x: hidden;">
+            <!-- Topbar -->
+            <header class="admin-topbar" style="height: 70px; background: #161412; border-bottom: 1px solid var(--border-color); padding: 0 30px; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <span style="font-size: 14px; color: var(--text-muted);"><i class="far fa-calendar-alt"></i> 17 Sep 2026 (เวลา 19:08 น.)</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 18px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent-gold); color: #111; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">
+                            D                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600; color: #fff;">Duke Coffee Administrator</div>
+                            <div style="font-size: 11px; color: var(--accent-gold); text-transform: uppercase;">superadmin</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Admin Content Container -->
+            <div class="admin-content" style="padding: 30px; flex: 1;">
+                
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 14px;">
+    <div>
+        <h1 style="font-size: 26px; margin-bottom: 4px;">จัดการหมวดหมู่สินค้า (Categories)</h1>
+        <p style="color: var(--text-muted); font-size: 14px;">จัดกลุ่มเมนูกาแฟ เครื่องดื่ม และเบเกอรี่เพื่อความสะดวกในการเลือกซื้อ</p>
+    </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 30px; align-items: flex-start;">
+    <!-- Left: Form to Add/Edit -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 25px;">
+        <h3 style="font-size: 18px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle);">
+            เพิ่มหมวดหมู่ใหม่        </h3>
+
+        <form action="../admin/categories.html" method="POST">
+            <input type="hidden" name="csrf_token" value="d4cf3a0bb0ab94e7ae065f857d7a6c98d4df8612ab1d98afaf50aabc699420f1">            <input type="hidden" name="action" value="save">
+            <input type="hidden" name="category_id" value="0">
+
+            <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-light);">ชื่อหมวดหมู่ <span style="color: #dc3545;">*</span></label>
+                <input type="text" name="name" required value="" placeholder="เช่น Special Coffee, Bakery" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+            </div>
+
+            <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-light);">Slug (URL ID ภาษาอังกฤษ) <span style="color: #dc3545;">*</span></label>
+                <input type="text" name="slug" required value="" placeholder="เช่น coffee, non-coffee, tea" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+            </div>
+
+            <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-light);">คำอธิบายสั้น</label>
+                <textarea name="description" rows="2" placeholder="อธิบายจุดเด่นของหมวดหมู่นี้..." style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 14px; outline: none; line-height: 1.4;"></textarea>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px;">
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-light);">ลำดับการแสดง</label>
+                    <input type="number" name="sort_order" value="0" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-light);">สถานะ</label>
+                    <select name="status" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                        <option value="active" >เปิดใช้งาน</option>
+                        <option value="inactive" >ปิดใช้งาน</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <button type="submit" class="btn btn-primary btn-sm" style="flex: 1;">
+                    <i class="fas fa-save"></i> บันทึกหมวดหมู่
+                </button>
+                            </div>
+        </form>
+    </div>
+
+    <!-- Right: Table of Categories -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;">
+                <thead>
+                    <tr style="background: #151311; border-bottom: 1px solid var(--border-color); color: var(--text-muted); font-size: 12px; text-transform: uppercase;">
+                        <th style="padding: 14px 16px;">ลำดับ</th>
+                        <th style="padding: 14px 16px;">ชื่อหมวดหมู่</th>
+                        <th style="padding: 14px 16px;">Slug</th>
+                        <th style="padding: 14px 16px;">จำนวนสินค้า</th>
+                        <th style="padding: 14px 16px;">สถานะ</th>
+                        <th style="padding: 14px 16px; text-align: right;">จัดการ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px; color: var(--text-muted);">1</td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: #fff;">
+                                Coffee                            </td>
+                            <td style="padding: 12px 16px; color: var(--accent-gold); font-size: 13px;">
+                                coffee                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span style="font-weight: 600; background: #141210; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border-subtle);">
+                                    7 รายการ
+                                </span>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full);">
+                                    เปิด                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 6px; justify-content: flex-end;">
+                                    <a href="../admin/categories.html?id=1" class="btn btn-dark btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/categories.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันการลบหมวดหมู่นี้?')">
+                                        <input type="hidden" name="csrf_token" value="d4cf3a0bb0ab94e7ae065f857d7a6c98d4df8612ab1d98afaf50aabc699420f1">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="category_id" value="1">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px; color: var(--text-muted);">2</td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: #fff;">
+                                Non-Coffee                            </td>
+                            <td style="padding: 12px 16px; color: var(--accent-gold); font-size: 13px;">
+                                non-coffee                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span style="font-weight: 600; background: #141210; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border-subtle);">
+                                    2 รายการ
+                                </span>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full);">
+                                    เปิด                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 6px; justify-content: flex-end;">
+                                    <a href="../admin/categories.html?id=2" class="btn btn-dark btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/categories.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันการลบหมวดหมู่นี้?')">
+                                        <input type="hidden" name="csrf_token" value="d4cf3a0bb0ab94e7ae065f857d7a6c98d4df8612ab1d98afaf50aabc699420f1">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="category_id" value="2">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px; color: var(--text-muted);">3</td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: #fff;">
+                                Tea                            </td>
+                            <td style="padding: 12px 16px; color: var(--accent-gold); font-size: 13px;">
+                                tea                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span style="font-weight: 600; background: #141210; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border-subtle);">
+                                    2 รายการ
+                                </span>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full);">
+                                    เปิด                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 6px; justify-content: flex-end;">
+                                    <a href="../admin/categories.html?id=3" class="btn btn-dark btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/categories.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันการลบหมวดหมู่นี้?')">
+                                        <input type="hidden" name="csrf_token" value="d4cf3a0bb0ab94e7ae065f857d7a6c98d4df8612ab1d98afaf50aabc699420f1">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="category_id" value="3">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px; color: var(--text-muted);">4</td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: #fff;">
+                                Bakery                            </td>
+                            <td style="padding: 12px 16px; color: var(--accent-gold); font-size: 13px;">
+                                bakery                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span style="font-weight: 600; background: #141210; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border-subtle);">
+                                    2 รายการ
+                                </span>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full);">
+                                    เปิด                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 6px; justify-content: flex-end;">
+                                    <a href="../admin/categories.html?id=4" class="btn btn-dark btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/categories.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันการลบหมวดหมู่นี้?')">
+                                        <input type="hidden" name="csrf_token" value="d4cf3a0bb0ab94e7ae065f857d7a6c98d4df8612ab1d98afaf50aabc699420f1">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="category_id" value="4">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px; color: var(--text-muted);">5</td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: #fff;">
+                                Dessert                            </td>
+                            <td style="padding: 12px 16px; color: var(--accent-gold); font-size: 13px;">
+                                dessert                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span style="font-weight: 600; background: #141210; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border-subtle);">
+                                    1 รายการ
+                                </span>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full);">
+                                    เปิด                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 6px; justify-content: flex-end;">
+                                    <a href="../admin/categories.html?id=5" class="btn btn-dark btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/categories.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันการลบหมวดหมู่นี้?')">
+                                        <input type="hidden" name="csrf_token" value="d4cf3a0bb0ab94e7ae065f857d7a6c98d4df8612ab1d98afaf50aabc699420f1">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="category_id" value="5">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 8px; font-size: 11px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+            </div> <!-- End .admin-content -->
+        </div> <!-- End .admin-main -->
+    </div> <!-- End .admin-layout -->
+
+    <!-- Scripts -->
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,705 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแรก | Duke Coffee</title>
+    <meta name="description" content="สัมผัสรสชาติกาแฟคุณภาพ พร้อมช่วงเวลาพิเศษในแบบของคุณ">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C8A96B'><path d='M2 21h18v-2H2v2zm2-4h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1zm16-9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2V8z'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Duke Coffee Design System CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Brand Logo -->
+                <a href="./index.html" class="brand-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <span>DUKE <span>COFFEE</span></span>
+                </a>
+
+                <!-- Desktop / Drawer Nav Menu -->
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li>
+                            <a href="./index.html" class="nav-link ">หน้าแรก</a>
+                        </li>
+                        <li>
+                            <a href="./menu.html" class="nav-link ">เมนูกาแฟ</a>
+                        </li>
+                        <li>
+                            <a href="./order-tracking.html" class="nav-link ">ติดตามออเดอร์</a>
+                        </li>
+                        <li>
+                            <a href="./about.html" class="nav-link ">เกี่ยวกับเรา</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html" class="nav-link ">ติดต่อเรา</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Actions (Cart, Account, Hamburger) -->
+                <div class="nav-actions">
+                    <!-- Cart Button -->
+                    <a href="./cart.html" class="cart-btn" title="ตะกร้าสินค้า" id="headerCartBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-badge" id="headerCartBadge">0</span>
+                    </a>
+
+                    <!-- Customer Profile / Login -->
+                                            <a href="./login.html" class="btn btn-primary btn-sm">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>เข้าสู่ระบบ</span>
+                        </a>
+                    
+                    <!-- Mobile Hamburger -->
+                    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content">
+        <!-- Flash Message Notification -->
+        
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Left: Hero Text -->
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <i class="fas fa-certificate"></i> Premium Artisan Coffee & Roastery
+                </div>
+                <h1 class="hero-title">
+                    สัมผัสรสชาติกาแฟ <br>
+                    <span>Crafted to Perfection</span>
+                </h1>
+                <p class="hero-subtitle">
+                    คัดสรรเมล็ดกาแฟสายพันธุ์ดีจากดอยช้าง คั่วสดใหม่ระดับพรีเมียม สกัดรสชาติเข้มข้น หอมละมุนในทุกแก้ว พร้อมเสิร์ฟให้คุณสัมผัสช่วงเวลาพิเศษ ทั้งหน้าร้านและส่งตรงถึงบ้าน
+                </p>
+                <div class="hero-cta">
+                    <a href="./menu.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-coffee"></i> สั่งเครื่องดื่มเลย
+                    </a>
+                    <a href="./order-tracking.html" class="btn btn-outline btn-lg">
+                        <i class="fas fa-search"></i> ติดตามออเดอร์
+                    </a>
+                </div>
+
+                <!-- Stats summary below CTA -->
+                <div style="display: flex; gap: 32px; margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border-subtle);">
+                    <div>
+                        <div style="font-size: 26px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-heading);">100%</div>
+                        <div style="font-size: 13px; color: var(--text-muted);">Arabica Specialty</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 26px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-heading);">15+</div>
+                        <div style="font-size: 13px; color: var(--text-muted);">Signature Menus</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 26px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-heading);">4.9 ★</div>
+                        <div style="font-size: 13px; color: var(--text-muted);">Customer Rating</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Hero Visual -->
+            <div class="hero-visual">
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1200&auto=format&fit=crop" alt="Duke Coffee Craft" loading="eager" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <!-- Floating Badge 1 -->
+                <div class="hero-floating-card">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--accent-gold); display: flex; align-items: center; justify-content: center; color: #111; font-size: 20px;">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <div style="font-size: 15px; font-weight: 700; color: var(--text-light);">Single Origin Quality</div>
+                        <div style="font-size: 13px; color: var(--text-muted);">เมล็ดกาแฟคัดพิเศษ เกรดส่งออก</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Highlights Bar -->
+<section style="background: #161412; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 35px 0;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(200, 169, 107, 0.12); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 22px; flex-shrink: 0;">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 16px; margin-bottom: 3px;">Freshly Roasted</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">คั่วสดใหม่ทุกสัปดาห์ ไม่ค้างสต็อก</p>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(200, 169, 107, 0.12); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 22px; flex-shrink: 0;">
+                    <i class="fas fa-blender"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 16px; margin-bottom: 3px;">Barista Craft</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">ชงสดแก้วต่อแก้ว ปรับระดับความหวานได้</p>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(200, 169, 107, 0.12); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 22px; flex-shrink: 0;">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 16px; margin-bottom: 3px;">Instant PromptPay</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">สแกนจ่าย QR สะดวก รวดเร็ว ตรวจสอบไว</p>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(200, 169, 107, 0.12); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-size: 22px; flex-shrink: 0;">
+                    <i class="fas fa-motorcycle"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 16px; margin-bottom: 3px;">Pickup & Delivery</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">เลือกรับหน้าร้าน หรือจัดส่งถึงหน้าบ้าน</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Grid -->
+<section class="section">
+    <div class="container">
+        <div class="section-title-wrap">
+            <span class="section-tag">Category Menu</span>
+            <h2 class="section-title">หมวดหมู่เครื่องดื่ม & เบเกอรี่</h2>
+            <p class="section-desc">เลือกชมเมนูที่รังสรรค์อย่างตั้งใจ ตอบโจทย์ทุกช่วงเวลาของคุณ</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <a href="./menu-cat-1.html" class="stat-card" style="text-decoration: none; flex-direction: column; align-items: flex-start; gap: 14px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        <div class="stat-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color: var(--accent-gold); font-size: 14px;"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 4px; color: var(--text-light);">Coffee</h4>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">กาแฟอาราบิก้าคั่วสดพรีเมียม สกัดรสชาติเข้มข้น หอมละมุน</p>
+                    </div>
+                </a>
+                            <a href="./menu-cat-2.html" class="stat-card" style="text-decoration: none; flex-direction: column; align-items: flex-start; gap: 14px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        <div class="stat-icon">
+                            <i class="fas fa-glass-whiskey"></i>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color: var(--accent-gold); font-size: 14px;"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 4px; color: var(--text-light);">Non-Coffee</h4>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">เครื่องดื่มช็อกโกแลต นมสด มัทฉะเข้มข้น สำหรับคนไม่ดื่มกาแฟ</p>
+                    </div>
+                </a>
+                            <a href="./menu-cat-3.html" class="stat-card" style="text-decoration: none; flex-direction: column; align-items: flex-start; gap: 14px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        <div class="stat-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color: var(--accent-gold); font-size: 14px;"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 4px; color: var(--text-light);">Tea</h4>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">ชาเขียว ชาไทย ชาผลไม้ คัดสรรใบชาระดับพรีเมียม</p>
+                    </div>
+                </a>
+                            <a href="./menu-cat-4.html" class="stat-card" style="text-decoration: none; flex-direction: column; align-items: flex-start; gap: 14px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        <div class="stat-icon">
+                            <i class="fas fa-bread-slice"></i>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color: var(--accent-gold); font-size: 14px;"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 4px; color: var(--text-light);">Bakery</h4>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">เบเกอรี่ ครัวซองต์ สโคน และเค้กโฮมเมด อบสดใหม่ทุกเช้า</p>
+                    </div>
+                </a>
+                            <a href="./menu-cat-5.html" class="stat-card" style="text-decoration: none; flex-direction: column; align-items: flex-start; gap: 14px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                        <div class="stat-icon">
+                            <i class="fas fa-cookie-bite"></i>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color: var(--accent-gold); font-size: 14px;"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 4px; color: var(--text-light);">Dessert</h4>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">ของหวาน ขนมปังโทสต์ และไอศกรีมสูตรเฉพาะของ Duke Coffee</p>
+                    </div>
+                </a>
+                    </div>
+    </div>
+</section>
+
+<!-- Featured Products Section -->
+<section class="section" style="background: #141210; border-top: 1px solid var(--border-color);">
+    <div class="container">
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 45px; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <span class="section-tag">Chef's Signature</span>
+                <h2 class="section-title" style="margin-bottom: 8px;">เมนูแนะนำประจำร้าน</h2>
+                <p class="section-desc" style="margin: 0;">เมนูยอดฮิตที่ลูกค้าการันตีความอร่อยลงตัว</p>
+            </div>
+            <a href="./menu.html" class="btn btn-outline">
+                <span>ดูเมนูทั้งหมด</span> <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="products-grid">
+                            <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Americano" loading="lazy">
+                        <span class="product-badge">Signature</span>
+                                                    <span class="stock-tag">มีสินค้า</span>
+                                            </div>
+                    <div class="product-body">
+                        <div class="product-category">Coffee</div>
+                        <h3 class="product-name">
+                            <a href="./product-detail-1.html">Americano</a>
+                        </h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; flex: 1;">
+                            เอสเพรสโซ่ช็อตเข้มข้นผสมน้ำแร่บริสุทธิ์ เลือกได้ทั้งร้อนและเย็น ดื่มง่าย...                        </p>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                            <div>
+                                <span style="font-size: 12px; color: var(--text-muted); display: block;">ราคา</span>
+                                <span style="font-size: 20px; font-weight: 700; color: var(--accent-gold);">฿65.00</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="./product-detail-1.html" class="btn btn-dark btn-sm" title="ปรับแต่งเครื่องดื่ม">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                                <button type="button" class="btn btn-primary btn-sm ajax-add-to-cart" data-product-id="1" title="ใส่ตะกร้าทันที">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=800&auto=format&fit=crop" alt="Espresso Single Origin" loading="lazy">
+                        <span class="product-badge">Signature</span>
+                                                    <span class="stock-tag">มีสินค้า</span>
+                                            </div>
+                    <div class="product-body">
+                        <div class="product-category">Coffee</div>
+                        <h3 class="product-name">
+                            <a href="./product-detail-2.html">Espresso Single Origin</a>
+                        </h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; flex: 1;">
+                            ช็อตเอสเพรสโซ่สกัดสดจากเมล็ดกาแฟดอยช้าง คั่วระดับ Medium-Dark บอดี้แน่น ...                        </p>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                            <div>
+                                <span style="font-size: 12px; color: var(--text-muted); display: block;">ราคา</span>
+                                <span style="font-size: 20px; font-weight: 700; color: var(--accent-gold);">฿60.00</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="./product-detail-2.html" class="btn btn-dark btn-sm" title="ปรับแต่งเครื่องดื่ม">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                                <button type="button" class="btn btn-primary btn-sm ajax-add-to-cart" data-product-id="2" title="ใส่ตะกร้าทันที">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=800&auto=format&fit=crop" alt="Cappuccino" loading="lazy">
+                        <span class="product-badge">Signature</span>
+                                                    <span class="stock-tag">มีสินค้า</span>
+                                            </div>
+                    <div class="product-body">
+                        <div class="product-category">Coffee</div>
+                        <h3 class="product-name">
+                            <a href="./product-detail-3.html">Cappuccino</a>
+                        </h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; flex: 1;">
+                            กาแฟรสเข้มกลมกล่อม ท็อปด้วยฟองนมนุ่มละเอียด โรยด้วยผงโกโก้พรีเมียมสวิส                        </p>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                            <div>
+                                <span style="font-size: 12px; color: var(--text-muted); display: block;">ราคา</span>
+                                <span style="font-size: 20px; font-weight: 700; color: var(--accent-gold);">฿75.00</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="./product-detail-3.html" class="btn btn-dark btn-sm" title="ปรับแต่งเครื่องดื่ม">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                                <button type="button" class="btn btn-primary btn-sm ajax-add-to-cart" data-product-id="3" title="ใส่ตะกร้าทันที">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?q=80&w=800&auto=format&fit=crop" alt="Latte Signature" loading="lazy">
+                        <span class="product-badge">Signature</span>
+                                                    <span class="stock-tag">มีสินค้า</span>
+                                            </div>
+                    <div class="product-body">
+                        <div class="product-category">Coffee</div>
+                        <h3 class="product-name">
+                            <a href="./product-detail-4.html">Latte Signature</a>
+                        </h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; flex: 1;">
+                            กาแฟนมละมุน กลมกล่อมลงตัวด้วยนมสดเกรดพรีเมียม อุณหภูมิโฟมเนียนลิ้น รสชาต...                        </p>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                            <div>
+                                <span style="font-size: 12px; color: var(--text-muted); display: block;">ราคา</span>
+                                <span style="font-size: 20px; font-weight: 700; color: var(--accent-gold);">฿75.00</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="./product-detail-4.html" class="btn btn-dark btn-sm" title="ปรับแต่งเครื่องดื่ม">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                                <button type="button" class="btn btn-primary btn-sm ajax-add-to-cart" data-product-id="4" title="ใส่ตะกร้าทันที">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?q=80&w=800&auto=format&fit=crop" alt="Mocha Dark Craft" loading="lazy">
+                        <span class="product-badge">Signature</span>
+                                                    <span class="stock-tag">มีสินค้า</span>
+                                            </div>
+                    <div class="product-body">
+                        <div class="product-category">Coffee</div>
+                        <h3 class="product-name">
+                            <a href="./product-detail-5.html">Mocha Dark Craft</a>
+                        </h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; flex: 1;">
+                            ความลงตัวของเอสเพรสโซ่และดาร์กช็อกโกแลตแท้ 70% รสชาติเข้มข้นหวานน้อย กำล...                        </p>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                            <div>
+                                <span style="font-size: 12px; color: var(--text-muted); display: block;">ราคา</span>
+                                <span style="font-size: 20px; font-weight: 700; color: var(--accent-gold);">฿85.00</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="./product-detail-5.html" class="btn btn-dark btn-sm" title="ปรับแต่งเครื่องดื่ม">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                                <button type="button" class="btn btn-primary btn-sm ajax-add-to-cart" data-product-id="5" title="ใส่ตะกร้าทันที">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=800&auto=format&fit=crop" alt="Caramel Macchiato" loading="lazy">
+                        <span class="product-badge">Signature</span>
+                                                    <span class="stock-tag">มีสินค้า</span>
+                                            </div>
+                    <div class="product-body">
+                        <div class="product-category">Coffee</div>
+                        <h3 class="product-name">
+                            <a href="./product-detail-6.html">Caramel Macchiato</a>
+                        </h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; flex: 1;">
+                            นมสดวานิลลาหอมหวาน ราดด้วยช็อตกาแฟเข้มข้นและคาราเมลซอสเคี่ยวสดสูตรพิเศษข...                        </p>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                            <div>
+                                <span style="font-size: 12px; color: var(--text-muted); display: block;">ราคา</span>
+                                <span style="font-size: 20px; font-weight: 700; color: var(--accent-gold);">฿85.00</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="./product-detail-6.html" class="btn btn-dark btn-sm" title="ปรับแต่งเครื่องดื่ม">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                                <button type="button" class="btn btn-primary btn-sm ajax-add-to-cart" data-product-id="6" title="ใส่ตะกร้าทันที">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?q=80&w=800&auto=format&fit=crop" alt="Dirty Duke (House Special)" loading="lazy">
+                        <span class="product-badge">Signature</span>
+                                                    <span class="stock-tag">มีสินค้า</span>
+                                            </div>
+                    <div class="product-body">
+                        <div class="product-category">Coffee</div>
+                        <h3 class="product-name">
+                            <a href="./product-detail-7.html">Dirty Duke (House Special)</a>
+                        </h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; flex: 1;">
+                            นมเย็นจัดสูตรพิเศษ ราดด้วยช็อตเอสเพรสโซ่เข้มข้น เสิร์ฟแยกชั้นเพื่ออรรถรส...                        </p>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                            <div>
+                                <span style="font-size: 12px; color: var(--text-muted); display: block;">ราคา</span>
+                                <span style="font-size: 20px; font-weight: 700; color: var(--accent-gold);">฿95.00</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="./product-detail-7.html" class="btn btn-dark btn-sm" title="ปรับแต่งเครื่องดื่ม">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                                <button type="button" class="btn btn-primary btn-sm ajax-add-to-cart" data-product-id="7" title="ใส่ตะกร้าทันที">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=800&auto=format&fit=crop" alt="Uji Kyoto Matcha Latte" loading="lazy">
+                        <span class="product-badge">Signature</span>
+                                                    <span class="stock-tag">มีสินค้า</span>
+                                            </div>
+                    <div class="product-body">
+                        <div class="product-category">Non-Coffee</div>
+                        <h3 class="product-name">
+                            <a href="./product-detail-9.html">Uji Kyoto Matcha Latte</a>
+                        </h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; flex: 1;">
+                            มัทฉะแท้เกรดพิธีการจากเมืองอูจิ ประเทศญี่ปุ่น หอมกลิ่นไอชาเขียวแท้ นุ่มล...                        </p>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid var(--border-subtle);">
+                            <div>
+                                <span style="font-size: 12px; color: var(--text-muted); display: block;">ราคา</span>
+                                <span style="font-size: 20px; font-weight: 700; color: var(--accent-gold);">฿90.00</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="./product-detail-9.html" class="btn btn-dark btn-sm" title="ปรับแต่งเครื่องดื่ม">
+                                    <i class="fas fa-sliders-h"></i>
+                                </a>
+                                <button type="button" class="btn btn-primary btn-sm ajax-add-to-cart" data-product-id="9" title="ใส่ตะกร้าทันที">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</section>
+
+<!-- Promo Discount Banner -->
+<section style="background: radial-gradient(circle at center, #261f18 0%, #111111 100%); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 70px 0;">
+    <div class="container">
+        <div style="background: rgba(28, 25, 23, 0.85); border: 1px dashed var(--accent-gold); border-radius: var(--radius-lg); padding: 40px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; align-items: center;">
+            <div>
+                <span class="hero-tag" style="margin-bottom: 12px;"><i class="fas fa-tags"></i> Special Promotion</span>
+                <h3 style="font-size: 32px; margin-bottom: 12px; color: var(--text-light);">ฉลองเปิดสาขาใหม่ มอบส่วนลดพิเศษ!</h3>
+                <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
+                    กรอกโค้ด <strong style="color: var(--accent-gold); font-size: 17px; background: rgba(200, 169, 107, 0.15); padding: 2px 10px; border-radius: 4px;">DUKE10</strong> รับส่วนลดทันที 10% ทุกออเดอร์<br>
+                    หรือใช้โค้ด <strong style="color: var(--accent-gold); font-size: 17px; background: rgba(200, 169, 107, 0.15); padding: 2px 10px; border-radius: 4px;">COFFEE50</strong> ลดทันที 50 บาท เมื่อสั่งครบ 300 บาทขึ้นไป
+                </p>
+                <a href="./menu.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i> ใช้คูปองสั่งเลย
+                </a>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div style="text-align: center; background: #181513; padding: 25px 35px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                    <i class="fas fa-ticket-alt" style="font-size: 42px; color: var(--accent-gold); margin-bottom: 12px;"></i>
+                    <div style="font-size: 24px; font-weight: 800; letter-spacing: 2px; color: #fff;">DUKE10</div>
+                    <div style="font-size: 12px; color: var(--accent-gold); margin-top: 4px;">ใช้ได้ถึง 31 ธ.ค. 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Testimonials -->
+<section class="section">
+    <div class="container">
+        <div class="section-title-wrap">
+            <span class="section-tag">Testimonials</span>
+            <h2 class="section-title">เสียงจากคอกาแฟตัวจริง</h2>
+            <p class="section-desc">ความประทับใจและรอยยิ้มของลูกค้าคือแรงผลักดันของเรา</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px;">
+            <div class="stat-card" style="flex-direction: column; align-items: flex-start;">
+                <div style="color: #ffc107; font-size: 14px; margin-bottom: 12px;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p style="font-size: 14px; color: var(--text-light); line-height: 1.7; margin-bottom: 20px; font-style: italic;">
+                    "Dirty Duke ร้านนี้คือเดอะเบสต์ นมเย็นจัดเสิร์ฟแยกชั้นตัดกับเอสเพรสโซ่รสชาติเข้มข้นอย่างลงตัว สั่งผ่านเว็บง่าย สแกนจ่ายพร้อมเพย์แล้วรอรับได้เลย ประทับใจมากครับ"
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-brown); display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                        ก
+                    </div>
+                    <div>
+                        <h5 style="font-size: 15px; margin: 0;">คุณกฤตภาส ศ.</h5>
+                        <span style="font-size: 12px; color: var(--text-muted);">ลูกค้าประจำสาขาทองหล่อ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card" style="flex-direction: column; align-items: flex-start;">
+                <div style="color: #ffc107; font-size: 14px; margin-bottom: 12px;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p style="font-size: 14px; color: var(--text-light); line-height: 1.7; margin-bottom: 20px; font-style: italic;">
+                    "ครัวซองต์เนยสดฝรั่งเศสอบใหม่หอมฟุ้ง ทานคู่กับ Uji Matcha หรือ Hot Latte เข้ากันสุดๆ เลือกระดับความหวานได้ตามใจ ระบบติดตามคำสั่งซื้อชัดเจนมากค่ะ"
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--accent-gold); color: #111; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                        น
+                    </div>
+                    <div>
+                        <h5 style="font-size: 15px; margin: 0;">คุณนลินทิพย์ ว.</h5>
+                        <span style="font-size: 12px; color: var(--text-muted);">Coffee & Cafe Blogger</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card" style="flex-direction: column; align-items: flex-start;">
+                <div style="color: #ffc107; font-size: 14px; margin-bottom: 12px;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p style="font-size: 14px; color: var(--text-light); line-height: 1.7; margin-bottom: 20px; font-style: italic;">
+                    "เมล็ดกาแฟดอยช้างคั่วสดจริง บอดี้แน่น เครม่าสวยมาก กลิ่นหอมติดปาก ที่สำคัญสั่งออนไลน์รับหน้าร้านไม่ต้องรอคิวเลย สะดวกตอบโจทย์เช้าวันทำงานมากๆ"
+                </p>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: #4e3523; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                        ภ
+                    </div>
+                    <div>
+                        <h5 style="font-size: 15px; margin: 0;">คุณภานุเดช ม.</h5>
+                        <span style="font-size: 12px; color: var(--text-muted);">Home Barista</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand -->
+                <div class="footer-col">
+                    <div class="brand-logo" style="margin-bottom: 16px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <span>DUKE <span>COFFEE</span></span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px;">
+                        สัมผัสสุนทรียภาพแห่งกาแฟพิเศษ คัดสรรเมล็ดกาแฟสายพันธุ์ดีจากแหล่งปลูกชั้นนำ คั่วและปรุงด้วยความพิถีพิถัน เพื่อให้ทุกจิบคือความประทับใจ
+                    </p>
+                    <div style="display: flex; gap: 12px;">
+                        <a href="https://facebook.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://line.me" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="LINE Official"><i class="fab fa-line"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">เมนูแนะนำ</h4>
+                    <ul class="footer-links">
+                        <li><a href="./menu-cat-1.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Special Coffee</a></li>
+                        <li><a href="./menu-cat-2.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Non-Coffee</a></li>
+                        <li><a href="./menu-cat-3.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Signature Tea</a></li>
+                        <li><a href="./menu-cat-4.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Fresh Bakery</a></li>
+                        <li><a href="./menu-cat-5.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Artisan Desserts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Customer Care -->
+                <div class="footer-col">
+                    <h4 class="footer-title">บริการลูกค้า</h4>
+                    <ul class="footer-links">
+                        <li><a href="./order-tracking.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ติดตามสถานะคำสั่งซื้อ</a></li>
+                        <li><a href="./cart.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ตะกร้าสินค้าของฉัน</a></li>
+                        <li><a href="./about.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ประวัติและเรื่องราวร้าน</a></li>
+                        <li><a href="./contact.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> แผนที่ & ติดต่อเรา</a></li>
+                        <li><a href="./admin/login.html" style="color: rgba(200, 169, 107, 0.4);"><i class="fas fa-lock" style="font-size: 10px; margin-right: 6px;"></i> พนักงาน / เจ้าหน้าที่</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Shop Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">ข้อมูลร้าน & เวลาเปิด</h4>
+                    <div style="font-size: 14px; color: var(--text-muted); display: flex; flex-direction: column; gap: 12px;">
+                        <p style="display: flex; gap: 10px; align-items: flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-top: 4px;"></i>
+                            <span>128/9 ถ.สุขุมวิท 55 (ทองหล่อ) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110</span>
+                        </p>
+                        <p style="display: flex; gap: 10px; align-items: center;">
+                            <i class="fas fa-phone-alt" style="color: var(--accent-gold);"></i>
+                            <span>02-888-9999, 089-123-4567</span>
+                        </p>
+                        <p style="display: flex; gap: 10px; align-items: flex-start;">
+                            <i class="fas fa-clock" style="color: var(--accent-gold); margin-top: 4px;"></i>
+                            <span>จันทร์ - ศุกร์: 07:00 - 18:00 น.<br>เสาร์ - อาทิตย์: 08:00 - 19:00 น.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 DUKE COFFEE (THAILAND) CO., LTD. สงวนลิขสิทธิ์ทุกประการ</p>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--accent-gold);">
+                        <i class="fas fa-shield-alt"></i> ปลอดภัยด้วย SSL & PromptPay Verified
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

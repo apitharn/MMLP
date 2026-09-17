@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบผู้ดูแลระบบ | Duke Coffee Admin</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body style="background: #0d0c0b; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px;">
+
+    <div style="width: 100%; max-width: 440px; background: #161412; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 45px 35px; box-shadow: var(--shadow-lg);">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--accent-gold), var(--primary-brown)); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: #111; font-size: 26px; box-shadow: 0 4px 20px rgba(200, 169, 107, 0.35);">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h1 style="font-size: 26px; margin-bottom: 6px;">Duke Coffee Admin</h1>
+            <p style="color: var(--text-muted); font-size: 13px;">ระบบจัดการคำสั่งซื้อและเครื่องดื่มหลังบ้าน</p>
+        </div>
+
+        
+        <form action="../admin/login.html" method="POST">
+            <input type="hidden" name="csrf_token" value="69e1a1252f75a12b866955ecabe4af454b798da427f534b81c2ce744fc26493b">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">
+                    ชื่อผู้ใช้ หรือ อีเมลแอดมิน
+                </label>
+                <div style="position: relative;">
+                    <i class="fas fa-user-shield" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                    <input type="text" name="username" required placeholder="admin" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 16px 12px 44px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-light);">
+                    รหัสผ่าน (Password)
+                </label>
+                <div style="position: relative;">
+                    <i class="fas fa-lock" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                    <input type="password" name="password" required placeholder="••••••••" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 12px 16px 12px 44px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 20px;">
+                <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบแอดมิน
+            </button>
+        </form>
+
+        <div style="text-align: center;">
+            <a href="../index.html" style="font-size: 13px; color: var(--text-muted); text-decoration: none;">
+                <i class="fas fa-arrow-left"></i> กลับไปหน้าร้านค้า
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

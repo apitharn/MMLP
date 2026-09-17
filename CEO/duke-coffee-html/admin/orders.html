@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จัดการคำสั่งซื้อ | Admin - Duke Coffee</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Master CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body style="background: var(--bg-dark); color: var(--text-light);">
+
+    <div class="admin-layout" style="display: flex; min-height: 100vh;">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" style="width: 260px; background: #141210; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; flex-shrink: 0;">
+            <!-- Brand -->
+            <div style="padding: 24px 20px; border-bottom: 1px solid var(--border-subtle);">
+                <a href="../admin/index.html" class="brand-logo" style="font-size: 20px;">
+                    <div class="logo-icon" style="width: 36px; height: 36px; font-size: 16px;">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <span>DUKE <span>ADMIN</span></span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav style="padding: 20px 12px; flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                <a href="../admin/index.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-tachometer-alt" style="width: 20px;"></i>
+                    <span>แดชบอร์ด (Dashboard)</span>
+                </a>
+
+                <a href="../admin/orders.html" class="admin-nav-link " style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-receipt" style="width: 20px;"></i>
+                        <span>คำสั่งซื้อ (Orders)</span>
+                    </div>
+                                            <span style="background: #dc3545; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: var(--radius-full);">
+                            1                        </span>
+                                    </a>
+
+                <a href="../admin/products.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-mug-hot" style="width: 20px;"></i>
+                    <span>จัดการสินค้า (Products)</span>
+                </a>
+
+                <a href="../admin/categories.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-th-list" style="width: 20px;"></i>
+                    <span>หมวดหมู่ (Categories)</span>
+                </a>
+
+                <a href="../admin/promotions.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-ticket-alt" style="width: 20px;"></i>
+                    <span>โค้ดส่วนลด (Coupons)</span>
+                </a>
+
+                <a href="../admin/settings.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-cog" style="width: 20px;"></i>
+                    <span>ตั้งค่าร้าน (Settings)</span>
+                </a>
+            </nav>
+
+            <!-- Bottom User & Frontend Link -->
+            <div style="padding: 20px; border-top: 1px solid var(--border-subtle);">
+                <a href="../index.html" target="_blank" class="btn btn-dark btn-sm" style="width: 100%; margin-bottom: 12px;">
+                    <i class="fas fa-external-link-alt"></i> เปิดหน้าร้านค้า
+                </a>
+                <a href="../admin/login.html" class="btn btn-outline btn-sm" style="width: 100%;">
+                    <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Panel -->
+        <div class="admin-main" style="flex: 1; display: flex; flex-direction: column; overflow-x: hidden;">
+            <!-- Topbar -->
+            <header class="admin-topbar" style="height: 70px; background: #161412; border-bottom: 1px solid var(--border-color); padding: 0 30px; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <span style="font-size: 14px; color: var(--text-muted);"><i class="far fa-calendar-alt"></i> 17 Sep 2026 (เวลา 19:07 น.)</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 18px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent-gold); color: #111; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">
+                            D                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600; color: #fff;">Duke Coffee Administrator</div>
+                            <div style="font-size: 11px; color: var(--accent-gold); text-transform: uppercase;">superadmin</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Admin Content Container -->
+            <div class="admin-content" style="padding: 30px; flex: 1;">
+                
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 16px;">
+    <div>
+        <h1 style="font-size: 26px; margin-bottom: 4px;">จัดการคำสั่งซื้อ (Orders Management)</h1>
+        <p style="color: var(--text-muted); font-size: 14px;">ตรวจสอบสถานะการชำระเงิน สลิปโอนเงิน และขั้นตอนการจัดเตรียมเครื่องดื่ม</p>
+    </div>
+</div>
+
+<!-- Filters & Search Bar -->
+<div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 25px;">
+    <!-- Status Navigation Pills -->
+    <div style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid var(--border-subtle); scrollbar-width: none;">
+        <a href="../admin/orders.html" class="btn btn-primary btn-sm">ทั้งหมด</a>
+        <a href="../admin/orders.html?status=pending_slip" class="btn btn-dark btn-sm">
+            <i class="fas fa-exclamation-circle" style="color: #dc3545;"></i> รอตรวจสลิป
+        </a>
+        <a href="../admin/orders.html?status=รอชำระเงิน" class="btn btn-dark btn-sm">รอชำระเงิน</a>
+        <a href="../admin/orders.html?status=กำลังเตรียมสินค้า" class="btn btn-dark btn-sm">กำลังเตรียมสินค้า</a>
+        <a href="../admin/orders.html?status=พร้อมรับที่ร้าน" class="btn btn-dark btn-sm">พร้อมรับที่ร้าน</a>
+        <a href="../admin/orders.html?status=กำลังจัดส่ง" class="btn btn-dark btn-sm">กำลังจัดส่ง</a>
+        <a href="../admin/orders.html?status=สำเร็จ" class="btn btn-dark btn-sm">สำเร็จ</a>
+        <a href="../admin/orders.html?status=ยกเลิก" class="btn btn-dark btn-sm">ยกเลิก</a>
+    </div>
+
+    <!-- Search input -->
+    <form action="../admin/orders.html" method="GET" style="display: flex; gap: 12px;">
+                <input type="text" name="search" value="" placeholder="ค้นหาเลขที่ออเดอร์, ชื่อลูกค้า หรือเบอร์โทร..." style="flex: 1; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+        <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-search"></i> ค้นหา</button>
+            </form>
+</div>
+
+<!-- Orders Table -->
+<div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
+    <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;">
+            <thead>
+                <tr style="background: #151311; border-bottom: 1px solid var(--border-color); color: var(--text-muted); font-size: 12px; text-transform: uppercase;">
+                    <th style="padding: 14px 16px;">หมายเลขออเดอร์</th>
+                    <th style="padding: 14px 16px;">ข้อมูลลูกค้า</th>
+                    <th style="padding: 14px 16px;">สลิปโอนเงิน</th>
+                    <th style="padding: 14px 16px;">ยอดชำระ</th>
+                    <th style="padding: 14px 16px;">สถานะคำสั่งซื้อ</th>
+                    <th style="padding: 14px 16px; text-align: right;">จัดการสถานะ</th>
+                </tr>
+            </thead>
+            <tbody>
+                                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 14px 16px;">
+                                <strong style="color: var(--accent-gold); font-size: 15px;">DUKE-20260917-0002</strong>
+                                <div style="font-size: 12px; color: var(--text-muted); margin-top: 3px;">
+                                    17 ก.ย. 2569 เวลา 08:58 น.                                </div>
+                            </td>
+
+                            <td style="padding: 14px 16px;">
+                                <div style="font-weight: 600; color: #fff;">ธนกฤต กิตติคุณ</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">0891234567</div>
+                                <div style="font-size: 11px; color: var(--accent-gold); margin-top: 2px;">
+                                    🏪 รับหน้าร้าน                                </div>
+                            </td>
+
+                            <td style="padding: 14px 16px;">
+                                                                    <span style="font-size: 12px; color: var(--text-muted);">ไม่มีสลิป</span>
+                                                                <div style="font-size: 11px; margin-top: 4px;">
+                                    <span class="badge badge-warning" style="padding: 2px 6px; font-size: 10px;">
+                                        รอตรวจสอบการชำระเงิน                                    </span>
+                                </div>
+                            </td>
+
+                            <td style="padding: 14px 16px;">
+                                <div style="font-size: 16px; font-weight: 700; color: #fff;">฿150.00</div>
+                                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">promptpay</div>
+                            </td>
+
+                            <td style="padding: 14px 16px;">
+                                <span class="badge badge-warning" style="font-size: 12px; padding: 4px 10px; border-radius: var(--radius-full);">
+                                    รอตรวจสอบการชำระเงิน                                </span>
+                            </td>
+
+                            <td style="padding: 14px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end; align-items: center;">
+                                    <!-- Quick Status Modal / Form -->
+                                    <form action="../admin/orders.html" method="POST" style="margin: 0;">
+                                        <input type="hidden" name="csrf_token" value="370745a66ce359af0b3d9365692982d918387f5b7ca688f5f059e5bc3cfa82f9">                                        <input type="hidden" name="action" value="quick_update">
+                                        <input type="hidden" name="order_id" value="2">
+                                        <select name="order_status" onchange="this.form.submit()" style="background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 6px 10px; border-radius: var(--radius-sm); font-size: 12px; outline: none; cursor: pointer;">
+                                            <option value="รอชำระเงิน" >รอชำระเงิน</option>
+                                            <option value="รอตรวจสอบการชำระเงิน" selected>รอตรวจสอบสลิป</option>
+                                            <option value="กำลังเตรียมสินค้า" >กำลังเตรียมสินค้า</option>
+                                            <option value="พร้อมรับที่ร้าน" >พร้อมรับที่ร้าน</option>
+                                            <option value="กำลังจัดส่ง" >กำลังจัดส่ง</option>
+                                            <option value="สำเร็จ" >สำเร็จ</option>
+                                            <option value="ยกเลิก" >ยกเลิก</option>
+                                        </select>
+                                    </form>
+
+                                    <a href="../admin/order-detail.html?id=2" class="btn btn-dark btn-sm" style="padding: 6px 12px; font-size: 12px;">
+                                        <i class="fas fa-eye"></i> รายละเอียด
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 14px 16px;">
+                                <strong style="color: var(--accent-gold); font-size: 15px;">DUKE-20260917-0001</strong>
+                                <div style="font-size: 12px; color: var(--text-muted); margin-top: 3px;">
+                                    17 ก.ย. 2569 เวลา 07:28 น.                                </div>
+                            </td>
+
+                            <td style="padding: 14px 16px;">
+                                <div style="font-weight: 600; color: #fff;">ธนกฤต กิตติคุณ</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">0891234567</div>
+                                <div style="font-size: 11px; color: var(--accent-gold); margin-top: 2px;">
+                                    🛵 จัดส่งเดลิเวอรี                                </div>
+                            </td>
+
+                            <td style="padding: 14px 16px;">
+                                                                    <span style="font-size: 12px; color: var(--text-muted);">ไม่มีสลิป</span>
+                                                                <div style="font-size: 11px; margin-top: 4px;">
+                                    <span class="badge badge-success" style="padding: 2px 6px; font-size: 10px;">
+                                        ชำระเงินแล้ว                                    </span>
+                                </div>
+                            </td>
+
+                            <td style="padding: 14px 16px;">
+                                <div style="font-size: 16px; font-weight: 700; color: #fff;">฿170.00</div>
+                                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">promptpay</div>
+                            </td>
+
+                            <td style="padding: 14px 16px;">
+                                <span class="badge badge-success" style="font-size: 12px; padding: 4px 10px; border-radius: var(--radius-full);">
+                                    สำเร็จ                                </span>
+                            </td>
+
+                            <td style="padding: 14px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end; align-items: center;">
+                                    <!-- Quick Status Modal / Form -->
+                                    <form action="../admin/orders.html" method="POST" style="margin: 0;">
+                                        <input type="hidden" name="csrf_token" value="370745a66ce359af0b3d9365692982d918387f5b7ca688f5f059e5bc3cfa82f9">                                        <input type="hidden" name="action" value="quick_update">
+                                        <input type="hidden" name="order_id" value="1">
+                                        <select name="order_status" onchange="this.form.submit()" style="background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 6px 10px; border-radius: var(--radius-sm); font-size: 12px; outline: none; cursor: pointer;">
+                                            <option value="รอชำระเงิน" >รอชำระเงิน</option>
+                                            <option value="รอตรวจสอบการชำระเงิน" >รอตรวจสอบสลิป</option>
+                                            <option value="กำลังเตรียมสินค้า" >กำลังเตรียมสินค้า</option>
+                                            <option value="พร้อมรับที่ร้าน" >พร้อมรับที่ร้าน</option>
+                                            <option value="กำลังจัดส่ง" >กำลังจัดส่ง</option>
+                                            <option value="สำเร็จ" selected>สำเร็จ</option>
+                                            <option value="ยกเลิก" >ยกเลิก</option>
+                                        </select>
+                                    </form>
+
+                                    <a href="../admin/order-detail.html?id=1" class="btn btn-dark btn-sm" style="padding: 6px 12px; font-size: 12px;">
+                                        <i class="fas fa-eye"></i> รายละเอียด
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                                                </tbody>
+        </table>
+    </div>
+</div>
+
+            </div> <!-- End .admin-content -->
+        </div> <!-- End .admin-main -->
+    </div> <!-- End .admin-layout -->
+
+    <!-- Scripts -->
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html>

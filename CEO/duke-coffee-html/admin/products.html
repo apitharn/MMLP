@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จัดการเมนูสินค้า | Admin - Duke Coffee</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Master CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body style="background: var(--bg-dark); color: var(--text-light);">
+
+    <div class="admin-layout" style="display: flex; min-height: 100vh;">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" style="width: 260px; background: #141210; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; flex-shrink: 0;">
+            <!-- Brand -->
+            <div style="padding: 24px 20px; border-bottom: 1px solid var(--border-subtle);">
+                <a href="../admin/index.html" class="brand-logo" style="font-size: 20px;">
+                    <div class="logo-icon" style="width: 36px; height: 36px; font-size: 16px;">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <span>DUKE <span>ADMIN</span></span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav style="padding: 20px 12px; flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                <a href="../admin/index.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-tachometer-alt" style="width: 20px;"></i>
+                    <span>แดชบอร์ด (Dashboard)</span>
+                </a>
+
+                <a href="../admin/orders.html" class="admin-nav-link " style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-receipt" style="width: 20px;"></i>
+                        <span>คำสั่งซื้อ (Orders)</span>
+                    </div>
+                                            <span style="background: #dc3545; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: var(--radius-full);">
+                            1                        </span>
+                                    </a>
+
+                <a href="../admin/products.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-mug-hot" style="width: 20px;"></i>
+                    <span>จัดการสินค้า (Products)</span>
+                </a>
+
+                <a href="../admin/categories.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-th-list" style="width: 20px;"></i>
+                    <span>หมวดหมู่ (Categories)</span>
+                </a>
+
+                <a href="../admin/promotions.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-ticket-alt" style="width: 20px;"></i>
+                    <span>โค้ดส่วนลด (Coupons)</span>
+                </a>
+
+                <a href="../admin/settings.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-cog" style="width: 20px;"></i>
+                    <span>ตั้งค่าร้าน (Settings)</span>
+                </a>
+            </nav>
+
+            <!-- Bottom User & Frontend Link -->
+            <div style="padding: 20px; border-top: 1px solid var(--border-subtle);">
+                <a href="../index.html" target="_blank" class="btn btn-dark btn-sm" style="width: 100%; margin-bottom: 12px;">
+                    <i class="fas fa-external-link-alt"></i> เปิดหน้าร้านค้า
+                </a>
+                <a href="../admin/login.html" class="btn btn-outline btn-sm" style="width: 100%;">
+                    <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Panel -->
+        <div class="admin-main" style="flex: 1; display: flex; flex-direction: column; overflow-x: hidden;">
+            <!-- Topbar -->
+            <header class="admin-topbar" style="height: 70px; background: #161412; border-bottom: 1px solid var(--border-color); padding: 0 30px; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <span style="font-size: 14px; color: var(--text-muted);"><i class="far fa-calendar-alt"></i> 17 Sep 2026 (เวลา 19:08 น.)</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 18px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent-gold); color: #111; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">
+                            D                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600; color: #fff;">Duke Coffee Administrator</div>
+                            <div style="font-size: 11px; color: var(--accent-gold); text-transform: uppercase;">superadmin</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Admin Content Container -->
+            <div class="admin-content" style="padding: 30px; flex: 1;">
+                
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 14px;">
+    <div>
+        <h1 style="font-size: 26px; margin-bottom: 4px;">จัดการเมนูเครื่องดื่มและสินค้า</h1>
+        <p style="color: var(--text-muted); font-size: 14px;">เพิ่มเมนูใหม่ แก้ไขราคา รูปภาพ และปรับปรุงสต็อกคงเหลือ</p>
+    </div>
+
+    <div>
+                    <a href="../admin/products.html?action=create" class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i> เพิ่มเมนูใหม่
+            </a>
+            </div>
+</div>
+
+    <!-- Products Table -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden;">
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;">
+                <thead>
+                    <tr style="background: #151311; border-bottom: 1px solid var(--border-color); color: var(--text-muted); font-size: 12px; text-transform: uppercase;">
+                        <th style="padding: 14px 16px;">ภาพเมนู</th>
+                        <th style="padding: 14px 16px;">ชื่อเมนู</th>
+                        <th style="padding: 14px 16px;">หมวดหมู่</th>
+                        <th style="padding: 14px 16px;">ราคา</th>
+                        <th style="padding: 14px 16px;">คงเหลือ</th>
+                        <th style="padding: 14px 16px;">สถานะ</th>
+                        <th style="padding: 14px 16px; text-align: right;">จัดการ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Americano" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Americano</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿65.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="1">
+                                    <input type="number" name="stock" value="50" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=1" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="1">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=800&auto=format&fit=crop" alt="Espresso Single Origin" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Espresso Single Origin</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿60.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="2">
+                                    <input type="number" name="stock" value="40" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=2" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="2">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=800&auto=format&fit=crop" alt="Cappuccino" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Cappuccino</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿75.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="3">
+                                    <input type="number" name="stock" value="35" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=3" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="3">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?q=80&w=800&auto=format&fit=crop" alt="Latte Signature" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Latte Signature</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿75.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="4">
+                                    <input type="number" name="stock" value="60" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=4" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="4">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?q=80&w=800&auto=format&fit=crop" alt="Mocha Dark Craft" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Mocha Dark Craft</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿85.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="5">
+                                    <input type="number" name="stock" value="30" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=5" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="5">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=800&auto=format&fit=crop" alt="Caramel Macchiato" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Caramel Macchiato</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿85.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="6">
+                                    <input type="number" name="stock" value="25" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=6" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="6">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?q=80&w=800&auto=format&fit=crop" alt="Dirty Duke (House Special)" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Dirty Duke (House Special)</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿95.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="7">
+                                    <input type="number" name="stock" value="20" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=7" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="7">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=800&auto=format&fit=crop" alt="Uji Kyoto Matcha Latte" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Uji Kyoto Matcha Latte</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Non-Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿90.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="9">
+                                    <input type="number" name="stock" value="30" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=9" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="9">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800&auto=format&fit=crop" alt="French Butter Croissant" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">French Butter Croissant</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Bakery                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿65.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="12">
+                                    <input type="number" name="stock" value="25" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=12" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="12">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=800&auto=format&fit=crop" alt="Burnt Basque Cheesecake" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Burnt Basque Cheesecake</div>
+                                                                    <span style="font-size: 10px; background: rgba(200, 169, 107, 0.2); color: var(--accent-gold); padding: 1px 6px; border-radius: 4px; font-weight: 600;">Signature</span>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Dessert                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿95.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="14">
+                                    <input type="number" name="stock" value="18" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=14" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="14">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?q=80&w=800&auto=format&fit=crop" alt="Belgian Dark Chocolate" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Belgian Dark Chocolate</div>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Non-Coffee                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿80.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="8">
+                                    <input type="number" name="stock" value="45" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=8" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="8">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop" alt="Imperial Earl Grey Milk Tea" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Imperial Earl Grey Milk Tea</div>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Tea                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿70.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="10">
+                                    <input type="number" name="stock" value="35" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=10" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="10">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=800&auto=format&fit=crop" alt="Peach Sparkling Tea" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Peach Sparkling Tea</div>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Tea                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿75.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="11">
+                                    <input type="number" name="stock" value="40" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=11" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="11">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 16px;">
+                                <img src="https://images.unsplash.com/photo-1623334044303-251086755233?q=80&w=800&auto=format&fit=crop" alt="Almond Cream Croissant" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <div style="font-weight: 700; color: #fff;">Almond Cream Croissant</div>
+                                                            </td>
+                            <td style="padding: 12px 16px; color: var(--text-muted);">
+                                Bakery                            </td>
+                            <td style="padding: 12px 16px; font-weight: 700; color: var(--accent-gold);">
+                                ฿85.00                            </td>
+                            <td style="padding: 12px 16px;">
+                                <form action="../admin/products.html" method="POST" style="display: flex; align-items: center; gap: 6px; margin: 0;">
+                                    <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                    <input type="hidden" name="action" value="update_stock">
+                                    <input type="hidden" name="product_id" value="13">
+                                    <input type="number" name="stock" value="15" min="0" style="width: 60px; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 4px 6px; border-radius: var(--radius-sm); font-size: 13px; text-align: center;">
+                                    <button type="submit" title="บันทึกสต็อก" style="background: none; border: none; color: var(--accent-gold); cursor: pointer;"><i class="fas fa-check"></i></button>
+                                </form>
+                            </td>
+                            <td style="padding: 12px 16px;">
+                                <span class="badge badge-success" style="font-size: 11px; padding: 3px 8px; border-radius: var(--radius-full);">
+                                    พร้อมขาย                                </span>
+                            </td>
+                            <td style="padding: 12px 16px; text-align: right;">
+                                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                                    <a href="../admin/products.html?action=edit&id=13" class="btn btn-dark btn-sm" style="padding: 4px 10px; font-size: 12px;" title="แก้ไข">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="../admin/products.html" method="POST" style="margin: 0;" onsubmit="return confirm('ยืนยันลบเมนูสินค้านี้? การลบไม่สามารถกู้คืนได้')">
+                                        <input type="hidden" name="csrf_token" value="80686665c34efbdb22f2f79aa56efb2936caa00d99745177e3ac0f0cb6eb58c9">                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="product_id" value="13">
+                                        <button type="submit" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 12px;" title="ลบ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                    </tbody>
+            </table>
+        </div>
+    </div>
+
+            </div> <!-- End .admin-content -->
+        </div> <!-- End .admin-main -->
+    </div> <!-- End .admin-layout -->
+
+    <!-- Scripts -->
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html>

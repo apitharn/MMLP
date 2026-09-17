@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espresso Single Origin | Duke Coffee</title>
+    <meta name="description" content="สัมผัสรสชาติกาแฟคุณภาพ พร้อมช่วงเวลาพิเศษในแบบของคุณ">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C8A96B'><path d='M2 21h18v-2H2v2zm2-4h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1zm16-9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2V8z'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Duke Coffee Design System CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Brand Logo -->
+                <a href="./index.html" class="brand-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <span>DUKE <span>COFFEE</span></span>
+                </a>
+
+                <!-- Desktop / Drawer Nav Menu -->
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li>
+                            <a href="./index.html" class="nav-link ">หน้าแรก</a>
+                        </li>
+                        <li>
+                            <a href="./menu.html" class="nav-link ">เมนูกาแฟ</a>
+                        </li>
+                        <li>
+                            <a href="./order-tracking.html" class="nav-link ">ติดตามออเดอร์</a>
+                        </li>
+                        <li>
+                            <a href="./about.html" class="nav-link ">เกี่ยวกับเรา</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html" class="nav-link ">ติดต่อเรา</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Actions (Cart, Account, Hamburger) -->
+                <div class="nav-actions">
+                    <!-- Cart Button -->
+                    <a href="./cart.html" class="cart-btn" title="ตะกร้าสินค้า" id="headerCartBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-badge" id="headerCartBadge">0</span>
+                    </a>
+
+                    <!-- Customer Profile / Login -->
+                                            <a href="./login.html" class="btn btn-primary btn-sm">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>เข้าสู่ระบบ</span>
+                        </a>
+                    
+                    <!-- Mobile Hamburger -->
+                    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content">
+        <!-- Flash Message Notification -->
+        
+<div class="section" style="padding-top: 35px;">
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); margin-bottom: 30px;">
+            <a href="./index.html" style="color: var(--text-muted);">หน้าแรก</a>
+            <i class="fas fa-chevron-right" style="font-size: 10px;"></i>
+            <a href="./menu.html" style="color: var(--text-muted);">เมนูทั้งหมด</a>
+            <i class="fas fa-chevron-right" style="font-size: 10px;"></i>
+            <a href="./menu-cat-1.html" style="color: var(--text-muted);">Coffee</a>
+            <i class="fas fa-chevron-right" style="font-size: 10px;"></i>
+            <span style="color: var(--accent-gold);">Espresso Single Origin</span>
+        </div>
+
+        <!-- Product Main Details Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 50px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 40px; margin-bottom: 70px;">
+            <!-- Left: Product Image Box -->
+            <div style="position: relative;">
+                <div style="aspect-ratio: 1/1; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle); background: #161412;">
+                    <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=800&auto=format&fit=crop" alt="Espresso Single Origin" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                                    <span class="product-badge" style="top: 20px; left: 20px; font-size: 12px; padding: 6px 14px;">Signature Recommended</span>
+                            </div>
+
+            <!-- Right: Product Customizer & Info -->
+            <div>
+                <span class="section-tag" style="margin-bottom: 8px;">Coffee</span>
+                <h1 style="font-size: 34px; margin-bottom: 12px; line-height: 1.25;">Espresso Single Origin</h1>
+                
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div style="color: #ffc107; font-size: 13px;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span style="color: var(--text-muted); margin-left: 6px; font-size: 12px;">(4.9/5 จากผู้สั่ง 120+ แก้ว)</span>
+                    </div>
+                    <span style="color: var(--border-color);">|</span>
+                                            <span style="color: #28a745; font-size: 13px; font-weight: 600;"><i class="fas fa-check-circle"></i> พร้อมจำหน่าย (คงเหลือ 40 ชิ้น)</span>
+                                    </div>
+
+                <div style="font-size: 32px; font-weight: 800; color: var(--accent-gold); font-family: var(--font-heading); margin-bottom: 24px;">
+                    ฿60.00                </div>
+
+                <p style="color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 30px; padding-bottom: 25px; border-bottom: 1px solid var(--border-subtle);">
+                    ช็อตเอสเพรสโซ่สกัดสดจากเมล็ดกาแฟดอยช้าง คั่วระดับ Medium-Dark บอดี้แน่น เครม่าสีทองเนียนนุ่ม                </p>
+
+                <!-- Customizer Form -->
+                <form action="./cart.html" method="POST">
+                    <input type="hidden" name="csrf_token" value="455fca9070893527bdf95b60fd869fc39707032f591b9196c88854c1c4244a00">                    <input type="hidden" name="action" value="add_to_cart">
+                    <input type="hidden" name="product_id" value="2">
+
+                    <!-- Type Option (Only relevant for drinks) -->
+                                            <div style="margin-bottom: 22px;">
+                            <label style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--text-light);">
+                                <i class="fas fa-temperature-high" style="color: var(--accent-gold); margin-right: 6px;"></i> ชนิดเครื่องดื่ม (Serving Type):
+                            </label>
+                            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                                <label style="cursor: pointer;">
+                                    <input type="radio" name="type_option" value="เย็น (Iced)" checked style="display: none;" class="custom-radio">
+                                    <span class="custom-pill"><i class="fas fa-snowflake" style="color: #4da6ff;"></i> เย็น (Iced)</span>
+                                </label>
+                                <label style="cursor: pointer;">
+                                    <input type="radio" name="type_option" value="ร้อน (Hot)" style="display: none;" class="custom-radio">
+                                    <span class="custom-pill"><i class="fas fa-fire" style="color: #ff6b4a;"></i> ร้อน (Hot)</span>
+                                </label>
+                                <label style="cursor: pointer;">
+                                    <input type="radio" name="type_option" value="ปั่น (Frappe)" style="display: none;" class="custom-radio">
+                                    <span class="custom-pill"><i class="fas fa-blender" style="color: var(--accent-gold);"></i> ปั่น (Frappe)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Sweetness Level -->
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--text-light);">
+                                <i class="fas fa-cube" style="color: var(--accent-gold); margin-right: 6px;"></i> ระดับความหวาน (Sweetness):
+                            </label>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <label style="cursor: pointer;">
+                                    <input type="radio" name="sweet_level" value="ไม่หวาน (0%)" style="display: none;" class="custom-radio">
+                                    <span class="custom-pill">0% ไม่หวาน</span>
+                                </label>
+                                <label style="cursor: pointer;">
+                                    <input type="radio" name="sweet_level" value="หวานน้อย (25%)" style="display: none;" class="custom-radio">
+                                    <span class="custom-pill">25% หวานน้อยมาก</span>
+                                </label>
+                                <label style="cursor: pointer;">
+                                    <input type="radio" name="sweet_level" value="หวานปานกลาง (50%)" style="display: none;" class="custom-radio">
+                                    <span class="custom-pill">50% หวานปานกลาง</span>
+                                </label>
+                                <label style="cursor: pointer;">
+                                    <input type="radio" name="sweet_level" value="หวานปกติ (100%)" checked style="display: none;" class="custom-radio">
+                                    <span class="custom-pill">100% หวานมาตรฐาน</span>
+                                </label>
+                            </div>
+                        </div>
+                    
+                    <!-- Quantity & Submit -->
+                    <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 30px;">
+                        <div style="display: flex; align-items: center; background: #111; border: 1px solid var(--border-color); border-radius: var(--radius-full); padding: 4px;">
+                            <button type="button" onclick="adjustQty(-1)" style="width: 38px; height: 38px; background: transparent; border: none; color: #fff; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" name="quantity" id="qtyInput" value="1" min="1" max="40" readonly style="width: 50px; background: transparent; border: none; color: #fff; font-size: 16px; font-weight: 700; text-align: center; outline: none;">
+                            <button type="button" onclick="adjustQty(1)" style="width: 38px; height: 38px; background: transparent; border: none; color: #fff; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                                                    <button type="submit" name="buy_now" value="0" class="btn btn-primary btn-lg" style="flex: 1; min-width: 180px;">
+                                <i class="fas fa-shopping-bag"></i> เพิ่มลงในตะกร้า
+                            </button>
+                            <button type="submit" name="buy_now" value="1" class="btn btn-outline btn-lg" style="white-space: nowrap;">
+                                <i class="fas fa-bolt"></i> ซื้อทันที
+                            </button>
+                                            </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+                    <div style="margin-top: 40px;">
+                <div style="margin-bottom: 30px;">
+                    <span class="section-tag">You May Also Like</span>
+                    <h3 style="font-size: 26px;">เมนูที่คุณอาจจะชอบในหมวดหมู่นี้</h3>
+                </div>
+
+                <div class="products-grid">
+                                            <div class="product-card">
+                            <div class="product-thumb">
+                                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Americano">
+                            </div>
+                            <div class="product-body">
+                                <div class="product-category">Coffee</div>
+                                <h4 class="product-name" style="font-size: 17px;">
+                                    <a href="./product-detail-1.html">Americano</a>
+                                </h4>
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 18px; font-weight: 700; color: var(--accent-gold);">฿65.00</span>
+                                    <a href="./product-detail-1.html" class="btn btn-primary btn-sm">
+                                        ดูรายละเอียด
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="product-card">
+                            <div class="product-thumb">
+                                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=800&auto=format&fit=crop" alt="Cappuccino">
+                            </div>
+                            <div class="product-body">
+                                <div class="product-category">Coffee</div>
+                                <h4 class="product-name" style="font-size: 17px;">
+                                    <a href="./product-detail-3.html">Cappuccino</a>
+                                </h4>
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 18px; font-weight: 700; color: var(--accent-gold);">฿75.00</span>
+                                    <a href="./product-detail-3.html" class="btn btn-primary btn-sm">
+                                        ดูรายละเอียด
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                            <div class="product-card">
+                            <div class="product-thumb">
+                                <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?q=80&w=800&auto=format&fit=crop" alt="Latte Signature">
+                            </div>
+                            <div class="product-body">
+                                <div class="product-category">Coffee</div>
+                                <h4 class="product-name" style="font-size: 17px;">
+                                    <a href="./product-detail-4.html">Latte Signature</a>
+                                </h4>
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+                                    <span style="font-size: 18px; font-weight: 700; color: var(--accent-gold);">฿75.00</span>
+                                    <a href="./product-detail-4.html" class="btn btn-primary btn-sm">
+                                        ดูรายละเอียด
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+</div>
+
+<style>
+.custom-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background: #181513;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+.custom-radio:checked + .custom-pill {
+    background: rgba(200, 169, 107, 0.15);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+</style>
+
+<script>
+function adjustQty(delta) {
+    const input = document.getElementById('qtyInput');
+    const max = parseInt(input.getAttribute('max')) || 99;
+    let val = parseInt(input.value) + delta;
+    if (val < 1) val = 1;
+    if (val > max) val = max;
+    input.value = val;
+}
+</script>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand -->
+                <div class="footer-col">
+                    <div class="brand-logo" style="margin-bottom: 16px;">
+                        <div class="logo-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <span>DUKE <span>COFFEE</span></span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px;">
+                        สัมผัสสุนทรียภาพแห่งกาแฟพิเศษ คัดสรรเมล็ดกาแฟสายพันธุ์ดีจากแหล่งปลูกชั้นนำ คั่วและปรุงด้วยความพิถีพิถัน เพื่อให้ทุกจิบคือความประทับใจ
+                    </p>
+                    <div style="display: flex; gap: 12px;">
+                        <a href="https://facebook.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://line.me" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="LINE Official"><i class="fab fa-line"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="cart-btn" style="width: 38px; height: 38px; font-size: 14px;" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">เมนูแนะนำ</h4>
+                    <ul class="footer-links">
+                        <li><a href="./menu-cat-1.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Special Coffee</a></li>
+                        <li><a href="./menu-cat-2.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Non-Coffee</a></li>
+                        <li><a href="./menu-cat-3.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Signature Tea</a></li>
+                        <li><a href="./menu-cat-4.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Fresh Bakery</a></li>
+                        <li><a href="./menu-cat-5.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> Artisan Desserts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Customer Care -->
+                <div class="footer-col">
+                    <h4 class="footer-title">บริการลูกค้า</h4>
+                    <ul class="footer-links">
+                        <li><a href="./order-tracking.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ติดตามสถานะคำสั่งซื้อ</a></li>
+                        <li><a href="./cart.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ตะกร้าสินค้าของฉัน</a></li>
+                        <li><a href="./about.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> ประวัติและเรื่องราวร้าน</a></li>
+                        <li><a href="./contact.html"><i class="fas fa-angle-right" style="font-size: 11px; margin-right: 6px;"></i> แผนที่ & ติดต่อเรา</a></li>
+                        <li><a href="./admin/login.html" style="color: rgba(200, 169, 107, 0.4);"><i class="fas fa-lock" style="font-size: 10px; margin-right: 6px;"></i> พนักงาน / เจ้าหน้าที่</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Shop Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">ข้อมูลร้าน & เวลาเปิด</h4>
+                    <div style="font-size: 14px; color: var(--text-muted); display: flex; flex-direction: column; gap: 12px;">
+                        <p style="display: flex; gap: 10px; align-items: flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); margin-top: 4px;"></i>
+                            <span>128/9 ถ.สุขุมวิท 55 (ทองหล่อ) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110</span>
+                        </p>
+                        <p style="display: flex; gap: 10px; align-items: center;">
+                            <i class="fas fa-phone-alt" style="color: var(--accent-gold);"></i>
+                            <span>02-888-9999, 089-123-4567</span>
+                        </p>
+                        <p style="display: flex; gap: 10px; align-items: flex-start;">
+                            <i class="fas fa-clock" style="color: var(--accent-gold); margin-top: 4px;"></i>
+                            <span>จันทร์ - ศุกร์: 07:00 - 18:00 น.<br>เสาร์ - อาทิตย์: 08:00 - 19:00 น.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 DUKE COFFEE (THAILAND) CO., LTD. สงวนลิขสิทธิ์ทุกประการ</p>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--accent-gold);">
+                        <i class="fas fa-shield-alt"></i> ปลอดภัยด้วย SSL & PromptPay Verified
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

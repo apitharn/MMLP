@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดคำสั่งซื้อ #DUKE-20260917-0001 | Admin - Duke Coffee</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Master CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body style="background: var(--bg-dark); color: var(--text-light);">
+
+    <div class="admin-layout" style="display: flex; min-height: 100vh;">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" style="width: 260px; background: #141210; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; flex-shrink: 0;">
+            <!-- Brand -->
+            <div style="padding: 24px 20px; border-bottom: 1px solid var(--border-subtle);">
+                <a href="../admin/index.html" class="brand-logo" style="font-size: 20px;">
+                    <div class="logo-icon" style="width: 36px; height: 36px; font-size: 16px;">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <span>DUKE <span>ADMIN</span></span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav style="padding: 20px 12px; flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                <a href="../admin/index.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-tachometer-alt" style="width: 20px;"></i>
+                    <span>แดชบอร์ด (Dashboard)</span>
+                </a>
+
+                <a href="../admin/orders.html" class="admin-nav-link " style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-receipt" style="width: 20px;"></i>
+                        <span>คำสั่งซื้อ (Orders)</span>
+                    </div>
+                                            <span style="background: #dc3545; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: var(--radius-full);">
+                            1                        </span>
+                                    </a>
+
+                <a href="../admin/products.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-mug-hot" style="width: 20px;"></i>
+                    <span>จัดการสินค้า (Products)</span>
+                </a>
+
+                <a href="../admin/categories.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-th-list" style="width: 20px;"></i>
+                    <span>หมวดหมู่ (Categories)</span>
+                </a>
+
+                <a href="../admin/promotions.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-ticket-alt" style="width: 20px;"></i>
+                    <span>โค้ดส่วนลด (Coupons)</span>
+                </a>
+
+                <a href="../admin/settings.html" class="admin-nav-link " style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-light); background: transparent;">
+                    <i class="fas fa-cog" style="width: 20px;"></i>
+                    <span>ตั้งค่าร้าน (Settings)</span>
+                </a>
+            </nav>
+
+            <!-- Bottom User & Frontend Link -->
+            <div style="padding: 20px; border-top: 1px solid var(--border-subtle);">
+                <a href="../index.html" target="_blank" class="btn btn-dark btn-sm" style="width: 100%; margin-bottom: 12px;">
+                    <i class="fas fa-external-link-alt"></i> เปิดหน้าร้านค้า
+                </a>
+                <a href="../admin/login.html" class="btn btn-outline btn-sm" style="width: 100%;">
+                    <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Panel -->
+        <div class="admin-main" style="flex: 1; display: flex; flex-direction: column; overflow-x: hidden;">
+            <!-- Topbar -->
+            <header class="admin-topbar" style="height: 70px; background: #161412; border-bottom: 1px solid var(--border-color); padding: 0 30px; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <span style="font-size: 14px; color: var(--text-muted);"><i class="far fa-calendar-alt"></i> 17 Sep 2026 (เวลา 19:08 น.)</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 18px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent-gold); color: #111; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">
+                            D                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600; color: #fff;">Duke Coffee Administrator</div>
+                            <div style="font-size: 11px; color: var(--accent-gold); text-transform: uppercase;">superadmin</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Admin Content Container -->
+            <div class="admin-content" style="padding: 30px; flex: 1;">
+                
+<!-- Header Toolbar -->
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 14px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="../admin/orders.html" class="btn btn-dark btn-sm">
+            <i class="fas fa-arrow-left"></i> กลับ
+        </a>
+        <h1 style="font-size: 24px; margin: 0;">คำสั่งซื้อ #DUKE-20260917-0001</h1>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+        <button onclick="window.print()" class="btn btn-outline btn-sm">
+            <i class="fas fa-print"></i> พิมพ์ใบเสร็จ (Print)
+        </button>
+    </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1.7fr 1fr; gap: 30px; align-items: flex-start;">
+    <!-- Left: Order Items & Customer Details -->
+    <div style="display: flex; flex-direction: column; gap: 25px;">
+        <!-- Customer & Delivery Method -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 25px;">
+            <h3 style="font-size: 17px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-user" style="color: var(--accent-gold);"></i> ข้อมูลลูกค้า & ช่องทางรับสินค้า
+            </h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; font-size: 14px;">
+                <div>
+                    <span style="color: var(--text-muted); display: block;">ชื่อลูกค้า:</span>
+                    <strong>ธนกฤต กิตติคุณ</strong>
+                </div>
+                <div>
+                    <span style="color: var(--text-muted); display: block;">เบอร์โทรศัพท์:</span>
+                    <strong><a href="tel:0891234567" style="color: var(--accent-gold);">0891234567</a></strong>
+                </div>
+                <div>
+                    <span style="color: var(--text-muted); display: block;">อีเมล:</span>
+                    <span>customer@dukecoffee.com</span>
+                </div>
+                <div>
+                    <span style="color: var(--text-muted); display: block;">วิธีรับสินค้า:</span>
+                    <strong>🛵 จัดส่งเดลิเวอรี</strong>
+                </div>
+                                    <div style="grid-column: span 2;">
+                        <span style="color: var(--text-muted); display: block;">ที่อยู่จัดส่ง:</span>
+                        <div style="background: #141210; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-top: 4px;">
+                            99/1 ถ.สุขุมวิท แขวงคลองเตยเหนือ เขตวัฒนา กรุงเทพฯ 10110                        </div>
+                    </div>
+                                                    <div style="grid-column: span 2; background: rgba(200, 169, 107, 0.1); border-left: 3px solid var(--accent-gold); padding: 10px 14px; border-radius: 4px;">
+                        <strong style="color: var(--accent-gold); font-size: 12px;">หมายเหตุเพิ่มเติม:</strong>
+                        <div style="font-size: 13px;">หวาน 50% ทั้งหมดครับ</div>
+                    </div>
+                            </div>
+        </div>
+
+        <!-- Items Table -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 25px;">
+            <h3 style="font-size: 17px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle);">
+                รายการเครื่องดื่มและสินค้า
+            </h3>
+
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <thead>
+                    <tr style="border-bottom: 1px solid var(--border-color); color: var(--text-muted); text-align: left;">
+                        <th style="padding: 10px 0;">ชื่อเมนู</th>
+                        <th style="padding: 10px 0; text-align: center;">จำนวน</th>
+                        <th style="padding: 10px 0; text-align: right;">ราคาต่อหน่วย</th>
+                        <th style="padding: 10px 0; text-align: right;">รวม</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 0;">
+                                <strong style="color: #fff;">Americano</strong>
+                                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+                                    เย็น (Iced) • หวานน้อย (50%)                                </div>
+                            </td>
+                            <td style="padding: 12px 0; text-align: center; font-weight: 600;">1</td>
+                            <td style="padding: 12px 0; text-align: right; color: var(--text-muted);">฿65.00</td>
+                            <td style="padding: 12px 0; text-align: right; font-weight: 700; color: #fff;">฿65.00</td>
+                        </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle);">
+                            <td style="padding: 12px 0;">
+                                <strong style="color: #fff;">Latte Signature</strong>
+                                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+                                    ร้อน (Hot) • หวานน้อย (50%)                                </div>
+                            </td>
+                            <td style="padding: 12px 0; text-align: center; font-weight: 600;">1</td>
+                            <td style="padding: 12px 0; text-align: right; color: var(--text-muted);">฿75.00</td>
+                            <td style="padding: 12px 0; text-align: right; font-weight: 700; color: #fff;">฿75.00</td>
+                        </tr>
+                                    </tbody>
+            </table>
+
+            <!-- Calculation Summary -->
+            <div style="max-width: 280px; margin-left: auto; margin-top: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+                <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
+                    <span>ยอดรวมสินค้า:</span>
+                    <span>฿140.00</span>
+                </div>
+                                <div style="display: flex; justify-content: space-between; color: var(--text-muted);">
+                    <span>ค่าจัดส่ง:</span>
+                    <span>฿30.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: 800; color: var(--accent-gold); border-top: 1px solid var(--border-color); padding-top: 10px;">
+                    <span>ยอดชำระสุทธิ:</span>
+                    <span>฿170.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: Payment Slip Verification & Status Control -->
+    <div style="display: flex; flex-direction: column; gap: 25px;">
+        <!-- Status Updater Card -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 25px;">
+            <h3 style="font-size: 17px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-sliders-h" style="color: var(--accent-gold);"></i> จัดการสถานะคำสั่งซื้อ
+            </h3>
+
+            <form action="../admin/order-detail.html?id=1" method="POST">
+                <input type="hidden" name="csrf_token" value="04559e9ff6c93d6318e125da12097cd9eb8c98e4060ac9d6cb01834a3222c222">                <input type="hidden" name="action" value="update_order_status">
+
+                <div style="margin-bottom: 16px;">
+                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-light);">สถานะคำสั่งซื้อ (Order Status)</label>
+                    <select name="order_status" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                        <option value="รอชำระเงิน" >1. รอชำระเงิน</option>
+                        <option value="รอตรวจสอบการชำระเงิน" >2. รอตรวจสอบการชำระเงิน</option>
+                        <option value="ชำระเงินแล้ว" >3. ชำระเงินแล้ว</option>
+                        <option value="กำลังเตรียมสินค้า" >4. กำลังเตรียมสินค้า (บาริสต้ากำลังชง)</option>
+                        <option value="พร้อมรับที่ร้าน" >5. พร้อมรับที่ร้าน</option>
+                        <option value="กำลังจัดส่ง" >6. กำลังจัดส่ง</option>
+                        <option value="สำเร็จ" selected>7. สำเร็จ (เสร็จสิ้น)</option>
+                        <option value="ยกเลิก" >8. ยกเลิก</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-light);">สถานะการชำระเงิน (Payment Status)</label>
+                    <select name="payment_status" style="width: 100%; background: #111; border: 1px solid var(--border-subtle); color: #fff; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 14px; outline: none;">
+                        <option value="รอชำระเงิน" >รอชำระเงิน</option>
+                        <option value="รอตรวจสอบการชำระเงิน" >รอตรวจสอบการชำระเงิน</option>
+                        <option value="ชำระเงินแล้ว" selected>ชำระเงินแล้ว</option>
+                        <option value="ปฏิเสธการชำระเงิน" >ปฏิเสธการชำระเงิน</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-sm" style="width: 100%;">
+                    <i class="fas fa-save"></i> บันทึกการเปลี่ยนแปลงสถานะ
+                </button>
+            </form>
+        </div>
+
+        <!-- Payment Slip Verification Card -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 25px;">
+            <h3 style="font-size: 17px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-receipt" style="color: var(--accent-gold);"></i> หลักฐานการชำระเงิน (Slip)
+            </h3>
+
+                            <div style="text-align: center; padding: 30px 10px; color: var(--text-muted); font-size: 14px;">
+                    <i class="fas fa-image" style="font-size: 32px; color: var(--text-muted); opacity: 0.4; margin-bottom: 8px; display: block;"></i>
+                    ลูกค้ายังไม่ได้แนบสลิปโอนเงิน
+                </div>
+                    </div>
+    </div>
+</div>
+
+            </div> <!-- End .admin-content -->
+        </div> <!-- End .admin-main -->
+    </div> <!-- End .admin-layout -->
+
+    <!-- Scripts -->
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html>
